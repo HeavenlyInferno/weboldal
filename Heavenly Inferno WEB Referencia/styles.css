@@ -10,24 +10,59 @@ body {
             overflow: hidden; /* Görgetés letiltása */
         }
 
-        h1 {
-            color: white;
-            font-size: 4rem;
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
         .container {
             position: relative;
             width: 100%;
             height: 100%;
         }
-
-        .cím{
+        
+        /*Headerek beállításai*/
+        #headerdemonok{
+            width: 100%;
+            text-align: center;
             margin: auto;
+            left: 50%;
+            position: relative;
+            color: #ff0000 ;
+            text-shadow:0 4px 10px rgba(139, 0, 0, 0.8);
+            font-size: 4rem;
+            text-align: center;
+            transform: translateX(-50%);
+        }
+
+        #headerangyalok{
+            width: 100%;
+            text-align: center;
+            margin: auto;
+            left: 50%;
+            position: relative;
+            color:#a3d5ff ;
+            text-shadow: 0 4px 10px rgba(173, 216, 230, 0.8);
+            font-size: 4rem;
+            text-align: center;
+            transform: translateX(-50%);
+        }
+
+        #headerhalandok{
+            width: 100%;
+            text-align: center;
+            margin: auto;
+            left: 50%;
+            position: relative;
+            color:#8b4513 ;
+            text-shadow: 0 4px 10px rgba(99, 50, 16, 0.8);
+            font-size: 4rem;
+            text-align: center;
+            transform: translateX(-50%);
+        }
+
+        /* Szekció pozicionálása és színe*/
+        section{
+            margin: auto;
+            text-align: center;
+            position: relative;
+            color: white;
+            font-size: large;
         }
 
         .button {
@@ -45,28 +80,8 @@ body {
             text-decoration: none;
             transition: 0.3s ease;
             animation: pulsate 2s infinite;
-        }
-        /*Sima gombok pozicionálása*/
-        .button{
             top: 82%;
             left: 40.5%;
-        }
-        /* Angyalok gomb pozicionálása */
-        .button.angyal {
-            top: 100%; /* Lefele az angyalok lábánál */
-            left: 10%; /* Kicsit beljebb balról */
-        }
-
-        /* Halandók gomb pozicionálása */
-        .button.halandok {
-            top: 82%; /* Kicsit a cím alatt */
-            left: 43.5%; /* Pontosan középen */
-        }
-
-        /* Démonok gomb pozicionálása */
-        .button.demon {
-            top: 65%; /* Lefele a démonok lábánál */
-            right: 10%; /* Kicsit beljebb jobbról */
         }
 
         .button:hover {
@@ -93,8 +108,8 @@ body {
             box-shadow: 0 4px 10px rgba(173, 216, 230, 0.8);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
             animation: angel-pulse 3s infinite;
-            top: 65%;
-            left: 9%;
+            top: 65%; /* Lefele az angyalok lábánál */
+            left: 10%; /* Kicsit beljebb balról */
         }
 
         .button.angyalok:hover {
@@ -109,8 +124,8 @@ body {
             box-shadow: 0 4px 10px rgba(139, 0, 0, 0.8);
             text-shadow: 0 0 5px #ff0000;
             animation: demon-flame 2s infinite;
-            top: 65%;
-            right: 9%;
+            top: 65%; /* Lefele a démonok lábánál */
+            left: 75%; /* balról benyomva jobbra (buggol a right) */
         }
 
         .button.demonok:hover {
@@ -124,6 +139,8 @@ body {
             color: #f5deb3;
             box-shadow: 0 4px 10px rgba(139, 69, 19, 0.8);
             animation: mortal-pulse 4s infinite;   
+            top: 82%; /* Kicsit a cím alatt */
+            left: 43.5%; /* Pontosan középen */
         }
 
         .button.halandok:hover {
