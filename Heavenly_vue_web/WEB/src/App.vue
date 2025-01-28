@@ -1,24 +1,23 @@
 <script setup>
-//import { RouterLink, RouterView } from 'vue-router'
-import Home from './views/Home.vue';
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <Home>
-
-  </Home>
+  <div>
+ <RouterView/>
+  </div>
 </template>
 
 <style scoped>
-body {
+div {
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background-image: url('Heavenly Inferno.jpg');
+            background-image: url('/Heavenly_vue_web/WEB/src/assets/HeavenlyInferno.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            height: 100vh;
+            size: 100%;
             overflow: hidden; /* Görgetés letiltása */
         }
 </style>

@@ -1,13 +1,13 @@
 <template>
    <div class="container">
         <!-- Angyalok gomb -->
-        <a href="angyalok.html" class="button angyalok">Angyalok</a>
+        <a href="angyalok.html" class="buttonangyalok">Angyalok</a>
 
         <!-- Halandók gomb -->
-        <a href="halandok.html" class="button halandok">Halandók</a>
+        <a href="halandok.html" class="buttonhalandok">Halandók</a>
 
         <!-- Démonok gomb -->
-        <a href="demonok.html" class="button demonok">Démonok</a>
+        <a href="demonok.html" class="buttondemonok">Démonok</a>
     </div>
 </template>
 
@@ -16,8 +16,27 @@
 </script>
 
 <style lang="scss" scoped>
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes pulsate {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
         /* Angyalok gomb */
-        .button.angyalok {
+        .buttonangyalok {
             background: linear-gradient(45deg, #ffffff, #a3d5ff);
             color: #000;
             box-shadow: 0 4px 10px rgba(173, 216, 230, 0.8);
@@ -27,13 +46,13 @@
             left: 10%; /* Kicsit beljebb balról */
         }
 
-        .button.angyalok:hover {
+        .buttonangyalok:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 20px rgba(173, 216, 230, 1);
         }
 
         /* Démonok gomb */
-        .button.demonok {
+        .buttondemonok {
             background: linear-gradient(45deg, #8b0000, #ff4500);
             color: #fff;
             box-shadow: 0 4px 10px rgba(139, 0, 0, 0.8);
@@ -43,13 +62,13 @@
             left: 75%; /* balról benyomva jobbra (buggol a right) */
         }
 
-        .button.demonok:hover {
+        .buttondemonok:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 20px rgba(255, 69, 0, 1);
         }
 
         /* Halandók gomb */
-        .button.halandok {
+        .buttonhalandok {
             background: linear-gradient(45deg, #8b4513, #a0522d);
             color: #f5deb3;
             box-shadow: 0 4px 10px rgba(139, 69, 19, 0.8);
@@ -58,7 +77,7 @@
             left: 43.5%; /* Pontosan középen */
         }
 
-        .button.halandok:hover {
+        .buttonhalandok:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 20px rgba(160, 82, 45, 1);
         }
