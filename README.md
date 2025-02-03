@@ -15,7 +15,12 @@
  - Bálintnak meg kell csinálnija a háttér képeket és a leírást minél előbb!
 
 
-
+###
+###
+###
+###
+###
+###
 
 ### -Juhász
 ### 2025.02.03 14:14
