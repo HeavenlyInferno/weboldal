@@ -4,13 +4,11 @@ import HomePage from './components/HomePage.vue';
 </script>
 
 <template>
-  <div :style="backgroundStyle" class="background-container">
+  <div class="tempt1">
     <HomePage/>
   </div>
 </template>
 
 <style scoped>
-.background-container {
-  width: 100%;
-}
+
 </style>
