@@ -1,9 +1,9 @@
 <template>
     <div class="container">
       <!-- Angyalok gomb -->
-       <div>
+       <div class="angyaldiv">
         <div>
-            <router-link to="/angyalok" class="button angyalok">Angyalok</router-link>
+            <router-link to="/angels" class="button angyalok">Angyalok</router-link>
         </div>
        </div>
 
@@ -16,7 +16,7 @@
        </div>
       
       <!-- Démonok gomb -->
-       <div>
+       <div class="demondiv">
         <div>
             <router-link to="/demonok" class="button demonok">Démonok</router-link>
         </div>
@@ -37,14 +37,18 @@ export default {
             display: flex;
         }
     .container div{
-        margin: 40px;
+        margin: 60px;
         font-size: xx-large;
-        padding-top: 100%;
+        padding-top: 30%;
 
     }
+    .angyaldiv{
+        padding-left: 6%;
+    }
+
     .halandodiv{
-        padding-right: 60%;
-        padding-left: 60%;
+        padding-left: 15%;
+        padding-right: 15%;
     }
         @keyframes pulsate {
             0% {
