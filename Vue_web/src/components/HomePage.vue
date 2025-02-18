@@ -69,6 +69,7 @@ export default {
             box-shadow: 0 4px 10px rgba(173, 216, 230, 0.8);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
             animation: angel-pulse 3s infinite;
+            border-radius: 10px;  
         }
 
         .button.angyalok:hover {
@@ -84,6 +85,7 @@ export default {
             box-shadow: 0 4px 10px rgba(139, 0, 0, 0.8);
             text-shadow: 0 0 5px #ff0000;
             animation: demon-flame 2s infinite;
+            border-radius: 10px;  
         }
 
         .button.demonok:hover {
@@ -98,6 +100,7 @@ export default {
             color: #f5deb3;
             box-shadow: 0 4px 10px rgba(139, 69, 19, 0.8);
             animation: mortal-pulse 4s infinite;   
+            border-radius: 10px;  
         }
 
         .button.halandok:hover {
