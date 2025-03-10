@@ -33,7 +33,7 @@ export default {
     .container {
             position: relative;
             width: 100%;
-            height: 100%;
+            height: 800px;
             display: flex;
         }
     .container div{
