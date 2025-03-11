@@ -67,12 +67,27 @@ body {
         }
 
         /* Szekció pozicionálása és színe*/
-        section{
+        /*section{
             margin: auto;
             text-align: center;
             position: relative;
             color: white;
             font-size: large;
+            width: 600px;
+            background-color: #f5deb3;
+        } */
+
+        section{
+                background-color: #f5f5dc; /* Pergamen hatású háttér */
+                font-family: 'Papyrus', cursive; /* Görögös hatású betűtípus */
+                margin: 50px auto;
+                padding: 20px;
+                width: 40%;
+                background: linear-gradient(to bottom, #fffdd0, #f5deb3);
+                border: 10px solid #8b4513; /* Tekercs keret színe */
+                border-radius: 15px;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+                text-align: center;
         }
 
         .button {
