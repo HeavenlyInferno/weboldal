@@ -2,7 +2,7 @@ body {
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background-image: url('Heavenly Inferno.jpg');
+            background-image: url('HeavenlyInferno.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -21,39 +21,49 @@ body {
             width: 100%;
             text-align: center;
             margin: auto;
-            left: 50%;
+            left: 32%;
             position: relative;
             color: #ff0000 ;
             text-shadow:0 4px 10px rgba(139, 0, 0, 0.8);
             font-size: 4rem;
             text-align: center;
             transform: translateX(-50%);
+            background-color:rgba(139, 0, 0, 0.4);;
+            width: 1200px;
+            border-radius: 50%;
+            
         }
 
         #headerangyalok{
             width: 100%;
             text-align: center;
             margin: auto;
-            left: 50%;
+            margin-left: 50%;
             position: relative;
             color:#a3d5ff ;
             text-shadow: 0 4px 10px rgba(173, 216, 230, 0.8);
             font-size: 4rem;
             text-align: center;
             transform: translateX(-50%);
+            background-color:rgba(202, 235, 247, 0.4);;
+            width: 1200px;
+            border-radius: 50%;
         }
 
         #headerhalandok{
             width: 100%;
             text-align: center;
             margin: auto;
-            left: 50%;
+            left: 32%;
             position: relative;
             color:#8b4513 ;
             text-shadow: 0 4px 10px rgba(99, 50, 16, 0.8);
             font-size: 4rem;
             text-align: center;
             transform: translateX(-50%);
+            background-color:rgba(148, 78, 27, 0.4);;
+            width: 1200px;
+            border-radius: 50%;
         }
 
         /* Szekció pozicionálása és színe*/
@@ -81,7 +91,7 @@ body {
             transition: 0.3s ease;
             animation: pulsate 2s infinite;
             top: 82%;
-            left: 40.5%;
+            margin-left: 40.5%;
         }
 
         .button:hover {
@@ -109,7 +119,8 @@ body {
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
             animation: angel-pulse 3s infinite;
             top: 65%; /* Lefele az angyalok lábánál */
-            left: 10%; /* Kicsit beljebb balról */
+            left: 15%;
+            margin: 0%;
         }
 
         .button.angyalok:hover {
@@ -125,7 +136,7 @@ body {
             text-shadow: 0 0 5px #ff0000;
             animation: demon-flame 2s infinite;
             top: 65%; /* Lefele a démonok lábánál */
-            left: 75%; /* balról benyomva jobbra (buggol a right) */
+            left: 32%;
         }
 
         .button.demonok:hover {
@@ -140,7 +151,7 @@ body {
             box-shadow: 0 4px 10px rgba(139, 69, 19, 0.8);
             animation: mortal-pulse 4s infinite;   
             top: 82%; /* Kicsit a cím alatt */
-            left: 43.5%; /* Pontosan középen */
+            left: 3%
         }
 
         .button.halandok:hover {
