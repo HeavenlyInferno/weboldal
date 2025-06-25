@@ -1,97 +1,11 @@
+/*-------------- ALAPA GECI ---------*/
+
 body {
   font-family: "Arial", sans-serif;
   background-image: url("HeavenlyInferno.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   /*overflow: hidden; /* Görgetés letiltása */
-}
-
-.container {
-  position: relative;
-  width: 100%;
-  height: 1000px;
-}
-
-/*Headerek beállításai*/
-#headerdemonok {
-  width: 100%;
-  text-align: center;
-  margin: auto;
-  left: 32%;
-  position: relative;
-  color: #ff0000;
-  text-shadow: 0 4px 10px rgba(139, 0, 0, 0.8);
-  font-size: 4rem;
-  text-align: center;
-  transform: translateX(-50%);
-  background-color: rgba(139, 0, 0, 0.4);
-  width: 1200px;
-  border-radius: 50%;
-}
-
-#headerangyalok {
-  width: 100%;
-  text-align: center;
-  margin: auto;
-  margin-left: 50%;
-  position: relative;
-  color: #a3d5ff;
-  text-shadow: 0 4px 10px rgba(173, 216, 230, 0.8);
-  font-size: 4rem;
-  text-align: center;
-  transform: translateX(-50%);
-  background-color: rgba(202, 235, 247, 0.4);
-  width: 1200px;
-  border-radius: 50%;
-}
-
-#ascroll {
-  background-image: url("Scroll1.png") !important;
-  background-color: #ffffff;
-  background: transparent;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; 
-  align-self: center;
-  position: relative;
-  z-index: 1;
-  padding: 15%;
-}
-
-#headerhalandok {
-  width: 100%;
-  text-align: center;
-  margin: auto;
-  left: 32%;
-  position: relative;
-  color: #8b4513;
-  text-shadow: 0 4px 10px rgba(99, 50, 16, 0.8);
-  font-size: 4rem;
-  text-align: center;
-  transform: translateX(-50%);
-  background-color: rgba(148, 78, 27, 0.4);
-  width: 1200px;
-  border-radius: 50%;
-}
-
-/* Szekció pozicionálása és színe*/
-/*section{
-            margin: auto;
-            text-align: center;
-            position: relative;
-            color: white;
-            font-size: large;
-            width: 600px;
-            background-color: #f5deb3;
-        } */
-
-section {
-  font-family: "Papyrus", cursive;
-  font-size: large;
-  margin: 50px auto;
-  padding: 20px;
-  width: 60%;
-  text-align: center;
 }
 
 .feet {
@@ -164,21 +78,16 @@ section {
   }
 }
 
-/* Angyalok gomb */
-.button.angyalok {
-  background: linear-gradient(45deg, #ffffff, #a3d5ff);
-  color: #000;
-  box-shadow: 0 4px 10px rgba(173, 216, 230, 0.8);
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  animation: angel-pulse 3s infinite;
-  top: 65%; /* Lefele az angyalok lábánál */
-  left: 15%;
-  margin: 0%;
-}
 
-.button.angyalok:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(173, 216, 230, 1);
+/*------------------ ALAP GECI VÉG ----------*/
+
+
+
+/* ----------------Main Fasz--------------*/
+.container {
+  position: relative;
+  width: 100%;
+  height: 1000px;
 }
 
 /* Démonok gomb */
@@ -195,6 +104,23 @@ section {
 .button.demonok:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 20px rgba(255, 69, 0, 1);
+}
+
+/* Angyalok gomb */
+.button.angyalok {
+  background: linear-gradient(45deg, #ffffff, #a3d5ff);
+  color: #000;
+  box-shadow: 0 4px 10px rgba(173, 216, 230, 0.8);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: angel-pulse 3s infinite;
+  top: 65%; /* Lefele az angyalok lábánál */
+  left: 15%;
+  margin: 0%;
+}
+
+.button.angyalok:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(173, 216, 230, 1);
 }
 
 /* Halandók gomb */
@@ -244,3 +170,207 @@ section {
     box-shadow: 0 6px 15px rgba(160, 82, 45, 1);
   }
 }
+
+/* ----------------Main Fasz vége---------------*/
+
+
+
+/* ------------------ DEMON GECI SEX -----------------*/
+
+/*Headerek beállításai*/
+#headerdemonok {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  left: 32%;
+  position: relative;
+  color: #ff0000;
+  text-shadow: 0 4px 10px rgba(139, 0, 0, 0.8);
+  font-size: 4rem;
+  text-align: center;
+  transform: translateX(-50%);
+  background-color: rgba(139, 0, 0, 0.4);
+  width: 1200px;
+  border-radius: 50%;
+}
+/* ----------------- DEMON GEC sexes váge-----------------*/
+
+
+
+/* ---------------- ANGYAL GEC (Ezek itt cigányok!)----------------*/
+
+#headerangyalok {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  margin-left: 50%;
+  position: relative;
+  color: #a3d5ff;
+  text-shadow: 0 4px 10px rgba(173, 216, 230, 0.8);
+  font-size: 4rem;
+  text-align: center;
+  transform: translateX(-50%);
+  background-color: rgba(202, 235, 247, 0.4);
+  width: 1200px;
+  border-radius: 50%;
+}
+
+/* ---------------- ANGYAL GEC vége (EZEK LOPJÁK A HŰTŐT GEC!)-----------------*/
+
+
+
+/* Placeholder tekercs */
+#ascroll {
+  background-image: url("Scroll1.png") !important;
+  background-color: #ffffff;
+  background: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; 
+  align-self: center;
+  position: relative;
+  z-index: 1;
+  padding: 15%;
+}
+section {
+  font-family: "Papyrus", cursive;
+  font-size: large;
+  margin: 50px auto;
+  padding: 20px;
+  width: 60%;
+  text-align: center;
+}
+/* Placeholder tekrecs vég */
+
+
+
+
+/* ---------------- Halandó BUZI (Halandó geci)[köszönöm vsc]-----------------*/
+#headerhalandok {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  left: 32%;
+  position: relative;
+  color: #8b4513;
+  text-shadow: 0 4px 10px rgba(99, 50, 16, 0.8);
+  font-size: 4rem;
+  text-align: center;
+  transform: translateX(-50%);
+  background-color: rgba(148, 78, 27, 0.4);
+  width: 1200px;
+  border-radius: 50%;
+}
+/* ---------------- Halandó BUZI vége (Halandó geci)-----------------*/
+
+
+
+/* --------------------ROLUNK CIGÁNY--------------------------------*/
+.rolunk-body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1a0000, #3b0000, #000000, #001e3c, #e0f7ff);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    color: white;
+    text-align: center;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  h1 {
+    margin-top: 50px;
+    font-size: 3rem;
+    text-shadow: 0 0 10px red;
+  }
+
+  .about-text {
+    max-width: 800px;
+    margin: 40px auto;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+  }
+
+  .creators-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .creator-bubble {
+    background: linear-gradient(135deg, #5a0000, #1e1e1e);
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .creator-bubble:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 0, 0, 0.6);
+  }
+
+  .section-title {
+    margin-top: 60px;
+    font-size: 2rem;
+    text-shadow: 0 0 5px #ff5555;
+  }
+  
+  .inferno-back-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #8b0000, #ff1a1a);
+  color: white;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+.inferno-back-btn:hover {
+  background: linear-gradient(135deg, #ff1a1a, #8b0000);
+  box-shadow: 0 0 20px rgba(255, 80, 80, 0.9);
+  transform: scale(1.05);
+}
+/* ----------------------ROLUNK CIGÁNY VÉGE-----------------------szágúldás, porshe szerelem*/
+
+
+/* Szekció pozicionálása és színe*/
+/*section{
+            margin: auto;
+            text-align: center;
+            position: relative;
+            color: white;
+            font-size: large;
+            width: 600px;
+            background-color: #f5deb3;
+        } */
+
+
+
+
+
+
+
+
+
+
