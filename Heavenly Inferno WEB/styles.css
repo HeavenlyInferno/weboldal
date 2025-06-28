@@ -220,8 +220,8 @@ body {
 
 
 /* Placeholder tekercs */
-#ascroll {
-  background-image: url("Scroll1.png") !important;
+#hscrolltop{
+  background-image: url("img/HscrollTop.png") !important;
   background-color: #ffffff;
   background: transparent;
   background-size: cover;
@@ -229,15 +229,37 @@ body {
   background-position: center; 
   align-self: center;
   position: relative;
-  z-index: 1;
-  padding: 15%;
+  padding: 10%;
+
+}
+#hscroll {
+  background-image: url("img/HscrollMid.png") !important;
+  background-color: #ffffff;
+  background: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; 
+  align-self: center;
+  position: relative;
+
+}
+#hscrollbot {
+  background-image: url("img/HscrollBot.png") !important;
+  background-color: #ffffff;
+  background: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; 
+  align-self: center;
+  position: relative;
+  padding: 10%;
 }
 section {
   font-family: "Papyrus", cursive;
   font-size: large;
   margin: 50px auto;
   padding: 20px;
-  width: 60%;
+  width: 40%;
   text-align: center;
 }
 /* Placeholder tekrecs vég */
