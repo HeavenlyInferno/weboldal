@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hírek - Heavenly Inferno</title>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+  overflow-x: hidden;
+}
+      background-size: 500% 500%;
+      animation: infernoBackground 15s ease infinite;
+      color: white;
+      min-height: 100vh;
+    }
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: linear-gradient(-45deg, #1a0000, #3b0000, #0d1b2a, #001e3c, #1a0000);
+  background-size: 500% 500%;
+  animation: infernoBackground 15s ease infinite;
+}
+
+   @keyframes infernoBackground {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 100%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 0%; }
+  100% { background-position: 0% 50%; }
+}
+
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      text-shadow: 0 0 10px red;
+    }
+
+    .news {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    }
+
+    .news-item {
+      border-left: 5px solid #fff;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+      animation: fadeIn 0.5s ease;
+    }
+
+    .news-item h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.2rem;
+    }
+
+    .news-item p {
+      margin: 0;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <h1>📰 Hírek és Frissítések</h1>
+  <section class="news" id="news-list">
+    <p>Betöltés...</p>
+  </section>
+
+  <script>
+    const kategoriak = {
+      angyal: { szin: '#a3d5ff', ikon: '😇' },
+      demon: { szin: '#ff4d4d', ikon: '😈' },
+      halando: { szin: '#8b4513', ikon: '👤' },
+      szerver: { szin: '#888', ikon: '🖥️' },
+      event: { szin: '#ffd700', ikon: '🎉' }
+    };
+
+    fetch("https://heavenlyinferno.hu/hirekjson/news.json")
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("news-list");
+        container.innerHTML = "";
+        data.forEach(h => {
+          const div = document.createElement("div");
+          div.className = "news-item";
+
+          const kat = kategoriak[h.kategoria] || { szin: '#ccc', ikon: '📢' };
+          div.style.borderLeft = `5px solid ${kat.szin}`;
+          div.innerHTML = `<h3>${kat.ikon} [${h.id}] ${h.title}</h3><p>${h.text}</p>`;
+          container.appendChild(div);
+        });
+      })
+      .catch(err => {
+        document.getElementById("news-list").innerHTML = "<p>Nem sikerült betölteni a híreket.</p>";
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
