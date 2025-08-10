@@ -1,0 +1,146 @@
+/*-------------- ALAPA GECI ---------*/
+
+body {
+  font-family: "Arial", sans-serif;
+  background-image: url("HeavenlyInferno.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*overflow: hidden; /* Görgetés letiltása */
+}
+
+.feet {
+  background: linear-gradient(0.25turn, #a3d5ff, #8b4513, #ff0000);
+  text-align: center;
+  padding: 40px;
+  margin-top: 50px;
+}
+.feet a {
+  color: white;
+  text-shadow: #000, 20px;
+  text-decoration: none;
+  font-family: "Papyrus", cursive;
+  font-size: x-large;
+  margin: 90px;
+}
+.feet a:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.829);
+}
+
+.button {
+  position: absolute;
+  padding: 20px 50px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease;
+  animation: pulsate 2s infinite;
+  top: 82%;
+  margin-left: 40.5%;
+}
+.visszbutton {
+  padding: 20px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease;
+  animation: pulsate 2s infinite;
+  margin-left: 41.5%;
+}
+
+.button:hover {
+  background-color: #333;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/*------------------ ALAP GECI VÉG ----------*/
+
+/* ------------------ DEMON GECI SEX -----------------*/
+
+/*Headerek beállításai*/
+#headerdemonok {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  left: 32%;
+  position: relative;
+  color: #ff0000;
+  text-shadow: 0 4px 10px rgba(139, 0, 0, 0.8);
+  font-size: 4rem;
+  text-align: center;
+  transform: translateX(-50%);
+  background-color: rgba(139, 0, 0, 0.4);
+  width: 1200px;
+  border-radius: 50%;
+}
+/* ----------------- DEMON GEC sexes váge-----------------*/
+/* Placeholder tekercs */
+#hscrolltop{
+  background-image: url("img/HscrollTop.png") !important;
+  background-color: #ffffff;
+  background: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; 
+  align-self: center;
+  position: relative;
+  padding: 10%;
+
+}
+#hscroll {
+  background-image: url("img/HscrollMid.png") !important;
+  background-color: #ffffff;
+  background: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; 
+  align-self: center;
+  position: relative;
+
+}
+#hscrollbot {
+  background-image: url("img/HscrollBot.png") !important;
+  background-color: #ffffff;
+  background: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; 
+  align-self: center;
+  position: relative;
+  padding: 10%;
+}
+section {
+  font-family: "Papyrus", cursive;
+  font-size: large;
+  margin: 50px auto;
+  padding: 20px;
+  width: 40%;
+  text-align: center;
+}
+/* Placeholder tekrecs vég */
