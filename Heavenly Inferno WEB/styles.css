@@ -376,21 +376,374 @@ section {
 /* ----------------------ROLUNK CIGÁNY VÉGE-----------------------szágúldás, porshe szerelem*/
 
 
-/* Szekció pozicionálása és színe*/
-/*section{
-            margin: auto;
-            text-align: center;
-            position: relative;
-            color: white;
-            font-size: large;
-            width: 600px;
-            background-color: #f5deb3;
-        } */
+/* ==== felső menü ==== */
+:root{
+  --hi-bg: rgba(12,12,18,.55);
+  --hi-stroke: rgba(255,255,255,.08);
+  --hi-text: #e9ecff;
+  --hi-blur: blur(10px);
+
+  --angel1:#e8f7ff; --angel2:#8ecbff;
+  --mortal1:#d0b08a; --mortal2:#8b5a2b;
+  --demon1:#ff784e; --demon2:#b30000;
+}
+
+body{ padding-top:84px; } 
+
+.hi-navbar{
+  position:fixed; inset:0 0 auto 0; height:72px; z-index:9998;
+  background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  backdrop-filter: var(--hi-blur);
+  -webkit-backdrop-filter: var(--hi-blur);
+  border-bottom:1px solid var(--hi-stroke);
+  box-shadow: 0 6px 30px rgba(0,0,0,.35);
+}
+.hi-nav-inner{
+  max-width:1200px; margin:0 auto; height:100%;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 18px;
+}
+
+
+.hi-brand{
+  display:flex; align-items:baseline; gap:8px; text-decoration:none;
+  letter-spacing:.5px;
+}
+.hi-brand-top{ 
+  font-weight:800; font-size:1.05rem; color:var(--angel2);
+  text-shadow:0 0 10px rgba(142,203,255,.6);
+}
+.hi-brand-bot{
+  font-weight:900; font-size:1.25rem; 
+  background: linear-gradient(90deg, var(--demon2), var(--demon1));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  text-shadow:0 0 18px rgba(255,120,78,.35);
+}
+
+
+.hi-links{ list-style:none; display:flex; gap:14px; align-items:center; }
+.hi-links > li > a, .hi-drop-btn{
+  color:var(--hi-text); text-decoration:none; font-weight:600;
+  padding:10px 12px; border-radius:12px; position:relative;
+  transition: transform .15s ease, background .2s ease, box-shadow .2s ease;
+}
+
+
+.hi-links > li > a::after, .hi-drop-btn::after{
+  content:""; position:absolute; left:12px; right:12px; bottom:6px; height:2px;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.5), transparent);
+  opacity:0; transform:scaleX(.3); transition:transform .2s, opacity .2s;
+}
+.hi-links > li > a:hover::after, .hi-drop:hover .hi-drop-btn::after{ 
+  opacity:1; transform:scaleX(1);
+}
+.hi-links > li > a:hover, .hi-drop:hover .hi-drop-btn{
+  background: rgba(255,255,255,.06);
+}
+
+
+a.hi-discord{
+  border:1px solid rgba(88,101,242,.35);
+  box-shadow:0 0 12px rgba(88,101,242,.25) inset;
+  border-radius:999px;
+}
+a.hi-discord:hover{
+  box-shadow:0 0 18px rgba(88,101,242,.45) inset;
+  transform:translateY(-1px);
+}
+
+
+.hi-drop {
+  position: relative;
+  padding-bottom: 0px; 
+.hi-drop-btn{ background:none; border:0; cursor:pointer; }
+.hi-drop-menu{
+  position:absolute; top:110%; right:0; min-width:220px;
+  background: var(--hi-bg);
+  backdrop-filter: var(--hi-blur);
+  -webkit-backdrop-filter: var(--hi-blur);
+  border:1px solid var(--hi-stroke);
+  box-shadow: 0 20px 40px rgba(0,0,0,.45);
+  border-radius:14px; padding:8px; display:none;
+  margin-top: -3px;
+}
+.hi-drop:hover .hi-drop-menu{ display:block; }
+.hi-drop-menu a{
+  display:block; padding:10px 12px; border-radius:10px; color:var(--hi-text);
+  text-decoration:none; font-weight:600;
+  transition: transform .12s ease, box-shadow .2s ease, background .2s ease;
+}
+
+
+.hi-drop-menu a.angel:hover{
+  background:linear-gradient(90deg, rgba(232,247,255,.15), rgba(142,203,255,.15));
+  box-shadow:0 0 24px rgba(142,203,255,.35);
+}
+.hi-drop-menu a.mortal:hover{
+  background:linear-gradient(90deg, rgba(208,176,138,.14), rgba(139,90,43,.14));
+  box-shadow:0 0 24px rgba(139,90,43,.35);
+}
+.hi-drop-menu a.demon:hover{
+  background:linear-gradient(90deg, rgba(255,120,78,.18), rgba(179,0,0,.18));
+  box-shadow:0 0 28px rgba(255,80,50,.45);
+}
+
+.hi-links a.is-active{
+  background: rgba(255,255,255,.10);
+  box-shadow: inset 0 0 0 1px var(--hi-stroke);
+}
+
+
+.hi-burger{
+  display:none; width:42px; height:42px; border-radius:10px;
+  background: rgba(255,255,255,.06); border:1px solid var(--hi-stroke);
+  align-items:center; justify-content:center; gap:4px; flex-direction:column;
+}
+.hi-burger span{ width:22px; height:2px; background:#fff; border-radius:2px; }
+
+@media (max-width: 880px){
+  .hi-burger{ display:flex; }
+  .hi-links{
+    position:fixed; top:72px; right:12px; left:12px;
+    background: var(--hi-bg);
+    backdrop-filter: var(--hi-blur);
+    -webkit-backdrop-filter: var(--hi-blur);
+    border:1px solid var(--hi-stroke);
+    border-radius:16px; padding:10px; gap:6px;
+    display:none; flex-direction:column; z-index:9999;
+  }
+  .hi-links.show{ display:flex; }
+  .hi-drop{ width:100%; }
+  .hi-drop-menu{ position:static; display:block; background:transparent; border:0; box-shadow:none; padding:0; }
+  .hi-drop-btn{ width:100%; text-align:left; }
+  .hi-drop-menu a{ padding-left:18px; }
+}
+
+.hi-navbar.shrink{
+  height:60px;
+  transition:height .2s ease;
+}
 
 
 
 
 
+/* ==== Hírek oldal pergamen háttér ==== */
+
+
+/* fő konténer */
+.hirek-content {
+  max-width: 1000px;
+  margin: 90px auto;
+  padding: 40px;
+  background: rgba(255, 245, 200, 0.92);
+  border: 3px solid rgba(90,40,10,0.6);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0,0,0,.6), inset 0 0 25px rgba(0,0,0,.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Égő szél-effekt */
+.hirek-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px dashed rgba(120,40,10,.5);
+  box-shadow: 0 0 25px rgba(255,100,0,.7), inset 0 0 25px rgba(255,180,50,.4);
+  animation: burnGlow 2.5s infinite alternate;
+  pointer-events: none;
+}
+@keyframes burnGlow {
+  from { box-shadow: 0 0 10px rgba(255,80,0,.6), inset 0 0 15px rgba(255,150,50,.3); }
+  to   { box-shadow: 0 0 30px rgba(255,50,0,.9), inset 0 0 30px rgba(255,200,100,.5); }
+}
+
+/* Hírek főcím */
+.hirek-content h1 {
+  font-size: 2.7rem;
+  text-align: center;
+  margin-bottom: 35px;
+  font-family: 'Papyrus', cursive;
+  color: #3a1f0d;
+  text-shadow: 0 0 12px rgba(255,180,50,.8), 0 0 25px rgba(255,80,0,.6);
+}
+
+
+/*.hirek-kategoria {
+  margin: 50px 0;
+  padding: 25px;
+  border-left: 8px solid rgba(90,40,10,0.8);
+  background: rgba(250,235,200,0.85);
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.35);
+  position: relative;
+  transition: transform .2s ease;
+}
+.hirek-kategoria:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0,0,0,.45);
+}
+
+
+.hirek-kategoria h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #2b1a0e;
+  text-shadow: 0 0 8px rgba(255,200,100,.6);
+  border-bottom: 2px solid rgba(90,40,10,.4);
+  padding-bottom: 8px;
+}
+
+/* Hírek item */
+.hirek-item {
+  margin-bottom: 25px;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 0 15px rgba(0,0,0,.25);
+  position: relative;
+  transition: transform .2s, box-shadow .2s;
+}
+.hirek-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 0 25px rgba(255,120,0,.6);
+}
+
+/* Hír cím */
+.hirek-item h3 {
+  font-size: 1.4rem;
+  margin: 0 0 8px;
+  color: #3a2617;
+  text-shadow: 0 0 5px rgba(255,180,80,.5);
+}
+
+/* Dátum */
+.hirek-item time {
+  display: block;
+  font-size: .9rem;
+  color: #633;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+/* Szöveg */
+.hirek-item p {
+  line-height: 1.6;
+  color: #2b1a0e;
+}
+
+
+/* ==== Hírek: oszlopos nézet, külön görgetéssel ==== */
+:root{
+  --hi-bg: rgba(12,12,18,.55);
+  --hi-stroke: rgba(255,255,255,.08);
+  --hi-text: #e9ecff;
+  --hi-blur: blur(10px);
+
+  --angel1:#e8f7ff; --angel2:#8ecbff;
+  --mortal1:#d0b08a; --mortal2:#8b5a2b;
+  --demon1:#ff784e; --demon2:#b30000;
+}
+
+.hirek-content{
+  background: transparent; /* a pergamen maradjon a body-n */
+  box-shadow: none; border: 0; padding: 20px 16px; margin-top: 20px;
+}
+
+.hirek-title{
+  max-width: 1200px; margin: 90px auto 12px; text-align:center;
+  font-size:2.2rem; color:#3a1f0d;
+  text-shadow: 0 0 10px rgba(255,180,50,.6);
+}
+
+.hirek-grid{
+  max-width: 1200px; margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 kategória egymás mellett */
+  gap: 14px;
+}
+
+/* Egy kategória oszlopa */
+.hirek-col{
+  background: rgba(255, 245, 220, .92);
+  border: 2px solid rgba(90,40,10,.35);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 0 16px rgba(0,0,0,.08);
+  display: flex; flex-direction: column; min-height: 0; /* fontos a grid + overflow-hoz */
+}
+
+/* Rögzített fejléc az oszlop tetején */
+.hirek-col-header{
+  position: sticky; top: 0; z-index: 1;
+  padding: 12px 14px;
+  font-weight: 800; letter-spacing:.5px;
+  background: linear-gradient(180deg, rgba(255,230,190,.95), rgba(255,245,220,.85));
+  border-bottom: 1px solid rgba(90,40,10,.25);
+}
+
+/* Frakciószín csík */
+.hirek-col-header::after{
+  content:""; display:block; height:3px; margin-top:8px; border-radius:2px;
+  background: currentColor;
+  opacity:.65;
+}
+
+/* Görgethető tartalom – a mágikus rész */
+.hirek-col-body{
+  overflow: auto;
+  padding: 12px;
+  height: calc(100vh - var(--navH) - 160px);
+  overscroll-behavior: contain;
+}
+
+/* Hírkártya */
+.hirek-item{
+  background: rgba(255,255,255,.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  padding: 12px; margin-bottom: 12px;
+  transition: transform .15s, box-shadow .15s;
+}
+.hirek-item:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255,120,0,.35);
+}
+.hirek-item h3{ margin:0 0 6px; font-size:1.05rem; color:#3a2617; }
+.hirek-item time{ display:block; font-size:.85rem; opacity:.8; margin-bottom:6px; font-style:italic; }
+.hirek-item p{ line-height:1.5; color:#2b1a0e; }
+
+/* Frakció színek az oszlop címéhez */
+.h-col-angyalok .hirek-col-header{ color:#6aa8ff; text-shadow:0 0 6px rgba(142,203,255,.6); }
+.h-col-demonok  .hirek-col-header{ color:#ff5a32; text-shadow:0 0 6px rgba(255,90,50,.6); }
+.h-col-halandok .hirek-col-header{ color:#a0733f; text-shadow:0 0 6px rgba(160,115,63,.5); }
+.h-col-szerver  .hirek-col-header{ color:#9c88ff; text-shadow:0 0 6px rgba(156,136,255,.55); }
+.h-col-esemeny  .hirek-col-header{ color:#ffca3a; text-shadow:0 0 6px rgba(255,202,58,.6); }
+
+/* Szép scrollbar (WebKit/Chromium/Edge) */
+.hirek-col-body::-webkit-scrollbar{ width:10px; }
+.hirek-col-body::-webkit-scrollbar-thumb{
+  background: linear-gradient(180deg, rgba(120,60,20,.6), rgba(90,40,10,.8));
+  border-radius: 10px;
+  border: 2px solid rgba(255,245,220,.9);
+}
+.hirek-col-body::-webkit-scrollbar-track{
+  background: rgba(255,245,220,.6);
+  border-radius: 10px;
+}
+
+/* Reszponzív: kisebb képernyőn kevesebb oszlop, végül egymás alatt */
+@media (max-width: 1200px){
+  .hirek-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 880px){
+  .hirek-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px){
+  .hirek-grid{ grid-template-columns: 1fr; }
+  .hirek-col-body{ height: auto; max-height: 60vh; }
+}
 
 
 

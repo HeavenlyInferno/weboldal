@@ -2,45 +2,105 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Hírek</title>
   <link rel="stylesheet" href="styles.css">
-  <title>Hírek - Heavenly Inferno</title>
 </head>
-<body>
-  <div class="background"></div>
-  <h1>📰 Hírek és Frissítések</h1>
-  <section class="news" id="news-list">
-    <p>Betöltés...</p>
-  </section>
+<body class="hirek-body" style="background:url('hirek.jpg') center/cover fixed no-repeat;">
+  <!-- NAVBAR ha szeretnéd ide jön -->
+   <nav class="hi-navbar">
+  <div class="hi-nav-inner">
+    <a class="hi-brand" href="Main.html">
+      <span class="hi-brand-top">Heavenly</span><span class="hi-brand-bot">Inferno</span>
+    </a>
+
+    <button class="hi-burger" aria-label="Menü" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="hi-links">
+      <li><a href="Main.html">Főoldal</a></li>
+
+      <li class="hi-drop">
+        <button class="hi-drop-btn">Frakciók</button>
+        <div class="hi-drop-menu">
+          <a class="angel" href="angyalok.html">Angyalok</a>
+          <a class="mortal" href="halandok.html">Halandók</a>
+          <a class="demon" href="demonok.html">Démonok</a>
+        </div>
+      </li>
+
+      <li><a href="hirek.html">Hírek</a></li>
+      <li><a href="rolunk.html">Rólunk</a></li>
+      <li><a href="csatlakozas.html">Csatlakozás</a></li>
+      <li><a class="hi-discord" href="https://discord.gg/uNXEEj5Tbf" target="_blank" rel="noopener">Discord</a></li>
+    </ul>
+  </div>
+</nav>
+  <main class="hirek-content">
+  <h1 class="hirek-title">📰 Hírek</h1>
+  <div id="hirek-grid" class="hirek-grid"></div>
+</main>
 
   <script>
-    const kategoriak = {
-      angyal: { szin: '#a3d5ff', ikon: '😇' },
-      demon: { szin: '#ff4d4d', ikon: '😈' },
-      halando: { szin: '#8b4513', ikon: '👤' },
-      szerver: { szin: '#888', ikon: '🖥️' },
-      event: { szin: '#ffd700', ikon: '🎉' }
-    };
+(async function(){
+  const res = await fetch("./hirek.json?ts="+Date.now(), { cache:"no-store" });
+  const hirek = await res.json();
 
-    fetch("https://heavenlyinferno.hu/hirekjson/news.json")
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById("news-list");
-        container.innerHTML = "";
-        data.forEach(h => {
-          const div = document.createElement("div");
-          div.className = "news-item";
+  // fix sorrend a kategória oszlopokhoz
+  const sorrend = ["angyalok","demonok","halandok","szerver","esemeny"];
+  const nevek = {
+    angyalok:"👼 Angyalok hírei",
+    demonok:"😈 Démonok hírei",
+    halandok:"🧑‍🤝‍🧑 Halandók hírei",
+    szerver:"🛠️ Szerver hírek",
+    esemeny:"🎉 Események"
+  };
 
-          const kat = kategoriak[h.kategoria] || { szin: '#ccc', ikon: '📢' };
-          div.style.borderLeft = `5px solid ${kat.szin}`;
-          div.innerHTML = `<h3>${kat.ikon} [${h.id}] ${h.title}</h3><p>${h.text}</p>`;
-          container.appendChild(div);
-        });
-      })
-      .catch(err => {
-        document.getElementById("news-list").innerHTML = "<p>Nem sikerült betölteni a híreket.</p>";
-        console.error(err);
-      });
-  </script>
+  // csoportosítás
+  const katMap = {};
+  hirek.forEach(h => {
+    (katMap[h.kategori] ||= []).push(h);
+  });
+
+  // dátum szerint csökkenő (újabb felül)
+  Object.values(katMap).forEach(lista => {
+    lista.sort((a,b)=> (b.datum||"").localeCompare(a.datum||""));
+  });
+
+  const grid = document.getElementById("hirek-grid");
+
+  // oszlopok felrajzolása a fix sorrendben – létező kategóriákra
+  sorrend.forEach(kat=>{
+    const lista = katMap[kat] || [];
+    // üres oszlop is maradhat törzshelynek; ha nem kell, és lista.length==0, akkor return;
+
+    const col = document.createElement("section");
+    col.className = `hirek-col h-col-${kat}`;
+
+    const header = document.createElement("div");
+    header.className = "hirek-col-header";
+    header.textContent = nevek[kat] || kat;
+
+    const body = document.createElement("div");
+    body.className = "hirek-col-body";
+
+    lista.forEach(hir=>{
+      const card = document.createElement("article");
+      card.className = "hirek-item";
+      card.innerHTML = `
+        <h3>${hir.cim}</h3>
+        <time>${hir.datum ?? ""}</time>
+        <p>${hir.szoveg}</p>
+      `;
+      body.appendChild(card);
+    });
+
+    col.appendChild(header);
+    col.appendChild(body);
+    grid.appendChild(col);
+  });
+})();
+</script>
 </body>
 </html>

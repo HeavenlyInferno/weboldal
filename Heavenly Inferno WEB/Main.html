@@ -7,6 +7,35 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+  <nav class="hi-navbar">
+  <div class="hi-nav-inner">
+    <a class="hi-brand" href="Main.html">
+      <span class="hi-brand-top">Heavenly</span><span class="hi-brand-bot">Inferno</span>
+    </a>
+
+    <button class="hi-burger" aria-label="Menü" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="hi-links">
+      <li><a href="Main.html">Főoldal</a></li>
+
+      <li class="hi-drop">
+        <button class="hi-drop-btn">Frakciók</button>
+        <div class="hi-drop-menu">
+          <a class="angel" href="angyalok.html">Angyalok</a>
+          <a class="mortal" href="halandok.html">Halandók</a>
+          <a class="demon" href="demonok.html">Démonok</a>
+        </div>
+      </li>
+
+      <li><a href="hirek.html">Hírek</a></li>
+      <li><a href="rolunk.html">Rólunk</a></li>
+      <li><a href="csatlakozas.html">Csatlakozás</a></li>
+      <li><a class="hi-discord" href="https://discord.gg/uNXEEj5Tbf" target="_blank" rel="noopener">Discord</a></li>
+    </ul>
+  </div>
+</nav>
     <div class="container">
       <!-- Angyalok gomb -->
       <a href="angyalok.html" class="button angyalok">Angyalok</a>
@@ -17,5 +46,24 @@
       <!-- Démonok gomb -->
       <a href="demonok.html" class="button demonok">Démonok</a>
     </div>
+	<script>
+  
+  const burger = document.querySelector('.hi-burger');
+  const links  = document.querySelector('.hi-links');
+  burger?.addEventListener('click', ()=>{
+    const open = links.classList.toggle('show');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  
+  const bar = document.querySelector('.hi-navbar');
+  let lastY = 0;
+  window.addEventListener('scroll', ()=>{
+    const y = window.scrollY || 0;
+    if (!bar) return;
+    if (y > 30 && y > lastY) bar.classList.add('shrink'); else if (y < 10) bar.classList.remove('shrink');
+    lastY = y;
+  });
+</script>
   </body>
 </html>
