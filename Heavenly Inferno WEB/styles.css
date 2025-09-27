@@ -2,7 +2,7 @@
 
 body {
   font-family: "Arial", sans-serif;
-  background-image: url("HeavenlyInferno.jpg");
+  background-color: whitesmoke;
   background-size: cover;
   background-repeat: no-repeat;
   /*overflow: hidden; /* Görgetés letiltása */
@@ -217,9 +217,17 @@ body {
 
 /* ---------------- ANGYAL GEC vége (EZEK LOPJÁK A HŰTŐT GEC!)-----------------*/
 
+/* ---------------- Frakció felípítés zegz fasz ------------------ */
 
+#canvas{
+  background-image: url("img/HeavenlyInferno.jpg");
+  height: 300px;
+  align-self: center;
+  position: relative;
+  
+}
 
-/* Placeholder tekercs */
+/* Placeholder tekercs 
 #hscrolltop{
   background-image: url("img/HscrollTop.png") !important;
   background-color: #ffffff;
@@ -262,7 +270,7 @@ section {
   width: 40%;
   text-align: center;
 }
-/* Placeholder tekrecs vég */
+ Placeholder tekrecs vég */
 
 
 
@@ -744,8 +752,3 @@ a.hi-discord:hover{
   .hirek-grid{ grid-template-columns: 1fr; }
   .hirek-col-body{ height: auto; max-height: 60vh; }
 }
-
-
-
-
-
