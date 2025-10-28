@@ -2,7 +2,7 @@
 
 body {
   font-family: "Arial", sans-serif;
-  background-color: whitesmoke;
+  background-image: url("HeavenlyInferno.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   /*overflow: hidden; /* Görgetés letiltása */
@@ -217,17 +217,9 @@ body {
 
 /* ---------------- ANGYAL GEC vége (EZEK LOPJÁK A HŰTŐT GEC!)-----------------*/
 
-/* ---------------- Frakció felípítés zegz fasz ------------------ */
 
-#canvas{
-  background-image: url("img/HeavenlyInferno.jpg");
-  height: 300px;
-  align-self: center;
-  position: relative;
-  
-}
 
-/* Placeholder tekercs 
+/* Placeholder tekercs */
 #hscrolltop{
   background-image: url("img/HscrollTop.png") !important;
   background-color: #ffffff;
@@ -270,7 +262,7 @@ section {
   width: 40%;
   text-align: center;
 }
- Placeholder tekrecs vég */
+/* Placeholder tekrecs vég */
 
 
 
@@ -463,7 +455,8 @@ a.hi-discord:hover{
 
 .hi-drop {
   position: relative;
-  padding-bottom: 0px; 
+  padding-bottom: 5px;
+	}  
 .hi-drop-btn{ background:none; border:0; cursor:pointer; }
 .hi-drop-menu{
   position:absolute; top:110%; right:0; min-width:220px;
@@ -552,7 +545,7 @@ a.hi-discord:hover{
   overflow: hidden;
 }
 
-/* Égő szél-effekt */
+
 .hirek-content::before {
   content: "";
   position: absolute;
@@ -578,8 +571,8 @@ a.hi-discord:hover{
   text-shadow: 0 0 12px rgba(255,180,50,.8), 0 0 25px rgba(255,80,0,.6);
 }
 
-
-/*.hirek-kategoria {
+/* Kategória blokk */
+.hirek-kategoria {
   margin: 50px 0;
   padding: 25px;
   border-left: 8px solid rgba(90,40,10,0.8);
@@ -594,7 +587,7 @@ a.hi-discord:hover{
   box-shadow: 0 8px 25px rgba(0,0,0,.45);
 }
 
-
+/* Kategória cím */
 .hirek-kategoria h2 {
   font-size: 1.8rem;
   margin-bottom: 20px;
@@ -656,7 +649,7 @@ a.hi-discord:hover{
 }
 
 .hirek-content{
-  background: transparent; /* a pergamen maradjon a body-n */
+  background: transparent; 
   box-shadow: none; border: 0; padding: 20px 16px; margin-top: 20px;
 }
 
@@ -669,7 +662,7 @@ a.hi-discord:hover{
 .hirek-grid{
   max-width: 1200px; margin: 0 auto 40px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 kategória egymás mellett */
+  grid-template-columns: repeat(5, 1fr);
   gap: 14px;
 }
 
@@ -679,7 +672,7 @@ a.hi-discord:hover{
   border: 2px solid rgba(90,40,10,.35);
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 0 16px rgba(0,0,0,.08);
-  display: flex; flex-direction: column; min-height: 0; /* fontos a grid + overflow-hoz */
+  display: flex; flex-direction: column; min-height: 0; 
 }
 
 /* Rögzített fejléc az oszlop tetején */
@@ -698,7 +691,7 @@ a.hi-discord:hover{
   opacity:.65;
 }
 
-/* Görgethető tartalom – a mágikus rész */
+/* Görgethető tartalom  */
 .hirek-col-body{
   overflow: auto;
   padding: 12px;
@@ -752,3 +745,8 @@ a.hi-discord:hover{
   .hirek-grid{ grid-template-columns: 1fr; }
   .hirek-col-body{ height: auto; max-height: 60vh; }
 }
+
+
+
+
+
