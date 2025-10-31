@@ -1,0 +1,83 @@
+/* ROOT, VÁLTOZÓK, STB */
+:root {
+    --space-cadet: #2b2d42ff;
+    --cool-gray: #8d99aeff;
+    --antiflash-white: #edf2f4ff;
+    --red-pantone: #ef233c;
+    --fire-engine-red: #d90429ff;
+}
+
+body {
+    background-image: url(HeavenlyInferno.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vw;
+}
+.dev-overlay {
+    background: radial-gradient(circle, rgba(237,242,244,97%) 0%, rgba(141,153,174,97%) 90%) ;
+    width: 70vw;
+    height: 25vw;
+    border-radius: 3vw;
+    margin-top: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+.dev-message {
+    font-family: 'Arial', sans-serif;
+    font-size: 2vw;
+    color: var(--space-cadet);
+    text-align: center;
+    padding: 2vw;
+}
+.discord-box {
+    display: flex;
+    justify-content: space-evenly;
+}
+.discord-box a{
+    background: radial-gradient(circle, rgb(222, 82, 47) 0%, rgb(145, 15, 30) 100%);
+    padding: 1vw;
+    border-radius: 10vw;
+    margin-top: 3vw;
+    color: var(--antiflash-white);
+    text-decoration: none;
+    text-align: center;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    font-weight: bold;
+    box-shadow: 0px 5px 5px 2px rgb(0 0 0 / 0.5);
+}
+.cast-container a{
+    padding: 1vw;
+    border-radius: 10vw;
+    margin-top: 3vw;
+    text-decoration: none;
+    text-align: center;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    font-weight: bold;
+    box-shadow: 0px 5px 5px 2px rgb(0 0 0 / 0.5);
+    margin: 7vw;
+}
+
+.button-angyalok {
+    background: radial-gradient(circle, rgb(107, 185, 240) 0%, rgb(15, 76, 117) 100%);
+    color: var(--antiflash-white);
+}
+.button-halandok {
+    background: radial-gradient(circle, rgb(199, 228, 117) 0%, rgb(125, 91, 16) 100%);
+    color: var(--space-cadet);
+}
+.button-demonok {
+    background: radial-gradient(circle, rgb(149, 45, 19) 0%, rgb(131, 14, 28) 100%);
+    color: var(--antiflash-white);
+}
+
+/* FOLYT KÖV, NE ÍRJ BELE! */
