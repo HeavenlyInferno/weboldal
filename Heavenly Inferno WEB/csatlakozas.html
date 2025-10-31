@@ -1,10 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Csatlakozás | Heavenly Inferno</title>
+  <link rel="stylesheet" href="csatlakozas.css">
 </head>
 <body>
+<nav class="hi-navbar">
+  <div class="hi-nav-inner">
+    <a class="hi-brand" href="Main.html">
+      <span class="hi-brand-top">Heavenly</span><span class="hi-brand-bot">Inferno</span>
+    </a>
+
+    <button class="hi-burger" aria-label="Menü" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="hi-links">
+      <li><a href="Main.html">Főoldal</a></li>
+
+      <li class="hi-drop">
+        <button class="hi-drop-btn">Frakciók</button>
+        <div class="hi-drop-menu">
+          <a class="angel" href="angyalok.html">Angyalok</a>
+          <a class="mortal" href="halandok.html">Halandók</a>
+          <a class="demon" href="demonok.html">Démonok</a>
+        </div>
+      </li>
+
+      <li><a href="hirek.html">Hírek</a></li>
+      <li><a href="rolunk.html">Rólunk</a></li>
+      <li><a href="csatlakozas.html">Csatlakozás</a></li>
+      <li><a class="hi-discord" href="https://discord.gg/uNXEEj5Tbf" target="_blank" rel="noopener">Discord</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <div class="background">
+    <div class="angel-light"></div>
+    <div class="demon-fire"></div>
+    <div class="smoke"></div>
+  </div>
+
+  <section class="join-hero">
+    <h1>CSATLAKOZÁS</h1>
+    
+
+    <div class="gate-wrapper">
+
+      <div class="gate gate--angel">
+		<div class="particle-wrapper particle-wrapper--angel"></div>
+        <div class="overlay"></div>
+        <h2>😇 ANGYALI KAPU</h2>
+        <p>Csatlakozz a menny seregéhez a Discordon.  
+        Kapj híreket, event infókat, és beszélj velünk élőben.</p>
+        <a href="https://discord.gg/heavenlyinferno" target="_blank" class="btn angel">BELÉPEK A DISCORDRA</a>
+      </div>
+
+
+      <div class="gate gate--demon">
+		<div class="particle-wrapper particle-wrapper--demon"></div>
+        <div class="overlay"></div>
+        <h2>🔥 DÉMONI KAPU</h2>
+        <p>Töltsd le a Heavenly Inferno kliensünket,  
+        és lépj be a pokol tüzébe.</p>
+
+        <div class="server-info">
+          <p>IP: <span id="server-ip">play.heavenlyinferno.hu</span></p>
+          <p>Verzió: 1.21</p>
+        </div>
+
+        <div class="btn-group">
+          <a href="letoltes/HeavenlyInfernoLauncher.exe" class="btn demon">KLIENS LETÖLTÉSE</a>
+          <button class="btn copy-btn" onclick="copyIP()">IP MÁSOLÁSA</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <h3>Mi vár rád a Heavenly Inferno világában?</h3>
+    <div class="feature-grid">
+      <div class="feature">
+        <span>⚔</span>
+        <h4>Frakcióharc</h4>
+        <p>Angyalok, démonok és halandók örök háborúja.</p>
+      </div>
+      <div class="feature">
+        <span>💬</span>
+        <h4>Közösség</h4>
+        <p>Aktív Discord szerver, barátok, események, támogatás.</p>
+      </div>
+      <div class="feature">
+        <span>🔥</span>
+        <h4>Egyedi képességek</h4>
+        <p>Különleges skillek és frakció-specifikus erők.</p>
+      </div>
+      <div class="feature">
+        <span>🏰</span>
+        <h4>Eventek és jutalmak</h4>
+        <p>Események, nyeremények, titkos kihívások.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function copyIP() {
+      const ip = document.getElementById("server-ip").textContent;
+      navigator.clipboard.writeText(ip);
+      alert("IP cím a vágólapra másolva: " + ip);
+    }
+  </script>
 
 </body>
 </html>

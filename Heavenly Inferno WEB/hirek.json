@@ -1,37 +1,37 @@
 [
   {
     "id": 1,
-    "kategori": "angyalok",
-    "cim": "Új skill teaser",
-    "datum": "2025-08-27",
-    "szoveg": "Bemutattuk az első angyali képességeket, amelyek fényből és gyógyításból merítenek erőt."
+    "kategori": "",
+    "cim": "",
+    "datum": "",
+    "szoveg": ""
   },
   {
     "id": 2,
-    "kategori": "demonok",
-    "cim": "Démon event indul",
-    "datum": "2025-08-25",
-    "szoveg": "A démon frakció új kihívással bővül, ahol a legerősebbek különleges jutalmakért küzdhetnek."
+    "kategori": "",
+    "cim": "",
+    "datum": "",
+    "szoveg": ""
   },
   {
     "id": 3,
-    "kategori": "halandok",
-    "cim": "Halandó bajnokság",
-    "datum": "2025-08-23",
-    "szoveg": "Elindult a Halandó PvP bajnokság, amely minden játékos számára nyitott."
+    "kategori": "",
+    "cim": "",
+    "datum": "",
+    "szoveg": "."
   },
   {
     "id": 4,
-    "kategori": "szerver",
-    "cim": "Plugin frissítés",
-    "datum": "2025-08-20",
-    "szoveg": "Telepítésre került az új skillrendszer plugin, amely minden frakciónál aktiválódik."
+    "kategori": "",
+    "cim": "",
+    "datum": "",
+    "szoveg": ""
   },
   {
     "id": 5,
-    "kategori": "esemeny",
-    "cim": "Nyitó event",
-    "datum": "2025-08-15",
-    "szoveg": "Megnyílt a Heavenly Inferno szerver! Az első nap különleges jutalmakat tartogat a résztvevőknek."
+    "kategori": "",
+    "cim": "",
+    "datum": "",
+    "szoveg": ""
   }
 ]

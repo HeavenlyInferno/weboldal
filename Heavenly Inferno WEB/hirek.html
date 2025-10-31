@@ -47,7 +47,7 @@
   const res = await fetch("./hirek.json?ts="+Date.now(), { cache:"no-store" });
   const hirek = await res.json();
 
-  // fix sorrend a kategória oszlopokhoz
+
   const sorrend = ["angyalok","demonok","halandok","szerver","esemeny"];
   const nevek = {
     angyalok:"👼 Angyalok hírei",
@@ -57,23 +57,23 @@
     esemeny:"🎉 Események"
   };
 
-  // csoportosítás
+
   const katMap = {};
   hirek.forEach(h => {
     (katMap[h.kategori] ||= []).push(h);
   });
 
-  // dátum szerint csökkenő (újabb felül)
+
   Object.values(katMap).forEach(lista => {
     lista.sort((a,b)=> (b.datum||"").localeCompare(a.datum||""));
   });
 
   const grid = document.getElementById("hirek-grid");
 
-  // oszlopok felrajzolása a fix sorrendben – létező kategóriákra
+
   sorrend.forEach(kat=>{
     const lista = katMap[kat] || [];
-    // üres oszlop is maradhat törzshelynek; ha nem kell, és lista.length==0, akkor return;
+
 
     const col = document.createElement("section");
     col.className = `hirek-col h-col-${kat}`;

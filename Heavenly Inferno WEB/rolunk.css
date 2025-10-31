@@ -1,11 +1,11 @@
-/*-------------- ALAPA GECI ---------*/
+
 
 body {
   font-family: "Arial", sans-serif;
   background-image: url("HeavenlyInferno.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  /*overflow: hidden; /* Görgetés letiltása */
+
 }
 
 .feet {
@@ -79,10 +79,8 @@ body {
 }
 
 
-/*------------------ ALAP GECI VÉG ----------*/
 
-/* --------------------ROLUNK CIGÁNY--------------------------------*/
-/* Háttér és alap */
+
   body {
     margin: 0;
     padding: 0;
@@ -213,4 +211,3 @@ body {
   box-shadow: 0 0 20px rgba(255, 80, 80, 0.9);
   transform: scale(1.05);
 }
-/* ----------------------ROLUNK CIGÁNY VÉGE-----------------------szágúldás, porshe szerelem*/
