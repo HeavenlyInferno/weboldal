@@ -1,0 +1,40 @@
+@import url(global.css);
+
+ /* Placeholder!!! header */
+#headerdemonok {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  margin-left: 50%;
+  position: relative;
+  color: #ff0000;
+  text-shadow: 0 4px 10px rgba(139, 0, 0, 0.8);
+  font-size: 2rem;
+  text-align: center;
+  transform: translateX(-50%);
+  background-color: rgba(139, 0, 0, 0.4);
+  width: 1200px;
+  border-radius: 50%;
+    margin-top: 90px;
+}
+
+
+.background{
+    background-image: url(../img/hell-bg.png);
+    padding: 10%;
+    background-position: 5%;
+    background-size: cover;
+}
+
+.lore{
+    background-color: rgb(27, 27, 27);
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    margin-top: 20px;
+    border:solid;
+    border-color: #ff0000;
+    border-radius: 5%;
+    border-style: outset;
+    padding: 3%;
+}
