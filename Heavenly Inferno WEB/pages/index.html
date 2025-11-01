@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heavenly Inferno</title>
+	<link rel="icon" type="image/png" href="favicon.png">
+
+   <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-image: url("HeavenlyInferno.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden; /* Görgetés letiltása */
+}
+.dev-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.button-group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 20px;
+}
+.dev-message {
+  background: linear-gradient(135deg, #ff4d4d, #b30000);
+  padding: 30px 40px;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  font-family: sans-serif;
+}
+
+.discord-box {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #7289da, #4e5d94);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+.dev-button {
+  background: linear-gradient(to right, #6a82fb, #3a6eff);
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.dev-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #3a6eff, #6a82fb);
+}
+.discord-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 24px;
+  background-color: #5865F2;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.discord-button:hover {
+  background-color: #4752c4;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 1000px;
+}
+
+/*Headerek beállításai*/
+#headerdemonok {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  left: 32%;
+  position: relative;
+  color: #ff0000;
+  text-shadow: 0 4px 10px rgba(139, 0, 0, 0.8);
+  font-size: 4rem;
+  text-align: center;
+  transform: translateX(-50%);
+  background-color: rgba(139, 0, 0, 0.4);
+  width: 1200px;
+  border-radius: 50%;
+}
+
+#headerangyalok {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  margin-left: 50%;
+  position: relative;
+  color: #a3d5ff;
+  text-shadow: 0 4px 10px rgba(173, 216, 230, 0.8);
+  font-size: 4rem;
+  text-align: center;
+  transform: translateX(-50%);
+  background-color: rgba(202, 235, 247, 0.4);
+  width: 1200px;
+  border-radius: 50%;
+}
+
+#ascroll {
+  background-image: url("Scroll1.png") !important;
+  background-color: #ffffff;
+  background: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; 
+  align-self: center;
+  position: relative;
+  z-index: 1;
+  padding: 15%;
+}
+
+#headerhalandok {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  left: 32%;
+  position: relative;
+  color: #8b4513;
+  text-shadow: 0 4px 10px rgba(99, 50, 16, 0.8);
+  font-size: 4rem;
+  text-align: center;
+  transform: translateX(-50%);
+  background-color: rgba(148, 78, 27, 0.4);
+  width: 1200px;
+  border-radius: 50%;
+}
+
+
+/*section{
+            margin: auto;
+            text-align: center;
+            position: relative;
+            color: white;
+            font-size: large;
+            width: 600px;
+            background-color: #f5deb3;
+        } */
+
+section {
+  font-family: "Papyrus", cursive;
+  font-size: large;
+  margin: 50px auto;
+  padding: 20px;
+  width: 60%;
+  text-align: center;
+}
+
+.feet {
+  background: linear-gradient(0.25turn, #a3d5ff, #8b4513, #ff0000);
+  text-align: center;
+  padding: 40px;
+  margin-top: 50px;
+}
+.feet a {
+  color: white;
+  text-shadow: #000, 20px;
+  text-decoration: none;
+  font-family: "Papyrus", cursive;
+  font-size: x-large;
+  margin: 90px;
+}
+.feet a:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.829);
+}
+
+.button {
+  position: absolute;
+  padding: 20px 50px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease;
+  animation: pulsate 2s infinite;
+  top: 82%;
+  margin-left: 40.5%;
+}
+.visszbutton {
+  padding: 20px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease;
+  animation: pulsate 2s infinite;
+  margin-left: 41.5%;
+}
+
+.button:hover {
+  background-color: #333;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.button.angyalok {
+  background: linear-gradient(45deg, #ffffff, #a3d5ff);
+  color: #000;
+  box-shadow: 0 4px 10px rgba(173, 216, 230, 0.8);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: angel-pulse 3s infinite;
+  top: 65%; /* Lefele az angyalok lábánál */
+  left: 15%;
+  margin: 0%;
+}
+
+.button.angyalok:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(173, 216, 230, 1);
+}
+
+
+.button.demonok {
+  background: linear-gradient(45deg, #8b0000, #ff4500);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(139, 0, 0, 0.8);
+  text-shadow: 0 0 5px #ff0000;
+  animation: demon-flame 2s infinite;
+  top: 65%; /* Lefele a démonok lábánál */
+  left: 32%;
+}
+
+.button.demonok:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(255, 69, 0, 1);
+}
+
+
+.button.halandok {
+  background: linear-gradient(45deg, #8b4513, #a0522d);
+  color: #f5deb3;
+  box-shadow: 0 4px 10px rgba(139, 69, 19, 0.8);
+  animation: mortal-pulse 4s infinite;
+  top: 82%; /* Kicsit a cím alatt */
+  left: 3%;
+}
+
+.button.halandok:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(160, 82, 45, 1);
+}
+
+
+@keyframes Angyalok {
+  0%,
+  100% {
+    box-shadow: 0 4px 10px rgba(173, 216, 230, 0.8);
+  }
+  50% {
+    box-shadow: 0 6px 15px rgba(173, 216, 230, 1);
+  }
+}
+
+
+@keyframes demon-flame {
+  0%,
+  100% {
+    box-shadow: 0 4px 10px rgba(139, 0, 0, 0.8);
+  }
+  50% {
+    box-shadow: 0 6px 15px rgba(255, 69, 0, 1);
+  }
+}
+
+
+@keyframes mortal-pulse {
+  0%,
+  100% {
+    box-shadow: 0 4px 10px rgba(139, 69, 19, 0.8);
+  }
+  50% {
+    box-shadow: 0 6px 15px rgba(160, 82, 45, 1);
+  }
+}
+</style>
+  </head>
+  <body>
+<div class="dev-overlay">
+  <div class="dev-message">
+    Weboldalunk fejlesztés alatt áll. Köszönjük a türelmedet!<br><br>
+    Addig is, csatlakozz a Discord szerverünkre, ahol nyomon követheted a fejlesztést!
+
+
+   <div class="discord-box">
+  <a href="https://heavenlyinferno.hu/rolunk.html" class="dev-button">ℹ️ Rólunk</a>
+  <a href="https://discord.gg/uNXEEj5Tbf" target="_blank" class="dev-button">🎮 Discord szerverünk</a>
+</div>
+  </div>
+</div>
+
+    <div class="container">
+
+      <a href="angyalok.html" class="button angyalok">Angyalok</a>
+
+
+      <a href="halandok.html" class="button halandok">Halandók</a>
+
+
+      <a href="demonok.html" class="button demonok">Démonok</a>
+    </div>
+  </body>
+</html>
