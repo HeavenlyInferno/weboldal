@@ -2,13 +2,14 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hírek</title>
   <link rel="stylesheet" href="../styles/hirek.css">
 </head>
-<body class="hirek-body" style="background:url('../img/hirek.jpg') center/cover fixed no-repeat;">
-  
-   <nav class="hi-navbar">
+
+<body class="hirek-body">
+
+<nav class="hi-navbar">
   <div class="hi-nav-inner">
     <a class="hi-brand" href="index.html">
       <span class="hi-brand-top">Heavenly</span><span class="hi-brand-bot">Inferno</span>
@@ -37,62 +38,90 @@
     </ul>
   </div>
 </nav>
-  <main class="hirek-content">
-  <h1 class="hirek-title">📰 Hírek</h1>
+
+<main>
+  <h1 class="hirek-title">Hírek</h1>
   <div id="hirek-grid" class="hirek-grid"></div>
 </main>
 
-  <script>
-(async function(){
-  const res = await fetch("./hirek.json?ts="+Date.now(), { cache:"no-store" });
-  const hirek = await res.json();
+<div id="hir-modal" class="hir-modal" aria-hidden="true">
+  <div class="hir-modal-backdrop" data-close="1"></div>
 
+  <div class="hir-modal-card" role="dialog" aria-modal="true" aria-labelledby="hir-modal-title">
+    <button class="hir-modal-close" type="button" data-close="1" aria-label="Bezárás">×</button>
+
+    <div class="hir-modal-head">
+      <div id="hir-modal-kat" class="hir-modal-kat"></div>
+      <h2 id="hir-modal-title" class="hir-modal-title"></h2>
+      <div id="hir-modal-date" class="hir-modal-date"></div>
+    </div>
+
+    <div id="hir-modal-body" class="hir-modal-body"></div>
+  </div>
+</div>
+
+<script>
+(async () => {
+  const url = new URL("./hirek.json", window.location.href);
+	url.searchParams.set("ts", Date.now().toString());
+	const res = await fetch(url.toString(), { cache: "no-store" });
+  const hirek = await res.json();
 
   const sorrend = ["angyalok","demonok","halandok","szerver","esemeny"];
   const nevek = {
-    angyalok:"👼 Angyalok hírei",
-    demonok:"😈 Démonok hírei",
-    halandok:"🧑‍🤝‍🧑 Halandók hírei",
-    szerver:"🛠️ Szerver hírek",
-    esemeny:"🎉 Események"
+    angyalok: "Angyalok",
+    demonok: "Démonok",
+    halandok: "Halandók",
+    szerver: "Szerver",
+    esemeny: "Események"
   };
-
 
   const katMap = {};
   hirek.forEach(h => {
     (katMap[h.kategori] ||= []).push(h);
   });
 
-
   Object.values(katMap).forEach(lista => {
-    lista.sort((a,b)=> (b.datum||"").localeCompare(a.datum||""));
+  lista.sort((a, b) => {
+    const af = a.friss === true ? 1 : 0;
+    const bf = b.friss === true ? 1 : 0;
+    if (bf !== af) return bf - af;
+    return (b.datum || "").localeCompare(a.datum || "");
   });
+});
 
   const grid = document.getElementById("hirek-grid");
 
-
-  sorrend.forEach(kat=>{
+  sorrend.forEach(kat => {
     const lista = katMap[kat] || [];
-
 
     const col = document.createElement("section");
     col.className = `hirek-col h-col-${kat}`;
 
     const header = document.createElement("div");
     header.className = "hirek-col-header";
-    header.textContent = nevek[kat] || kat;
+    header.textContent = nevek[kat];
 
     const body = document.createElement("div");
     body.className = "hirek-col-body";
 
-    lista.forEach(hir=>{
+    if (lista.length === 0) {
+      body.innerHTML = "<p class='hirek-empty'>Nincs hír</p>";
+    }
+
+    lista.forEach(hir => {
       const card = document.createElement("article");
       card.className = "hirek-item";
+	  const isFresh = (hir.friss === true);
+	  if (isFresh) card.classList.add("is-fresh");
       card.innerHTML = `
-        <h3>${hir.cim}</h3>
-        <time>${hir.datum ?? ""}</time>
-        <p>${hir.szoveg}</p>
-      `;
+		<h3>${hir.cim}</h3>
+		<time>${hir.datum || ""}</time>
+		<p>${hir.szoveg}</p>
+		<div class="hirek-more">Tovább</div>
+	  `;
+	  card.style.cursor = "pointer";
+	  card.addEventListener("click", () => openHirModal(kat, hir));
       body.appendChild(card);
     });
 
@@ -100,7 +129,50 @@
     col.appendChild(body);
     grid.appendChild(col);
   });
+    const modal = document.getElementById("hir-modal");
+    const modalTitle = document.getElementById("hir-modal-title");
+    const modalDate = document.getElementById("hir-modal-date");
+    const modalBody = document.getElementById("hir-modal-body");
+    const modalKat = document.getElementById("hir-modal-kat");
+
+    function katLabel(k){
+        return ({
+            angyalok: "Angyalok",
+            demonok: "Démonok",
+            halandok: "Halandók",
+            szerver: "Szerver",
+            esemeny: "Események"
+        })[k] || k;
+    }
+
+    function openHirModal(kat, hir){
+        modalTitle.textContent = hir.cim || "";
+        modalDate.textContent = hir.datum || "";
+        modalBody.textContent = hir.szoveg || "";
+        modalKat.textContent = katLabel(kat);
+
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeHirModal(){
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    }
+
+    modal.addEventListener("click", (e) => {
+        if (e.target?.dataset?.close === "1") closeHirModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("is-open")) {
+            closeHirModal();
+        }
+    });
 })();
 </script>
+
 </body>
 </html>
