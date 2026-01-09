@@ -78,8 +78,6 @@ body {
   }
 }
 
-
-
 .container {
   position: relative;
   width: 100%;
@@ -167,13 +165,6 @@ body {
   }
 }
 
-
-
-
-
-
-
-
 .rolunk-body {
     margin: 0;
     padding: 0;
@@ -259,6 +250,44 @@ body {
   box-shadow: 0 0 20px rgba(255, 80, 80, 0.9);
   transform: scale(1.05);
 }
+
+.release-box {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 620px;
+  padding: 36px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid #5a0000;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 28px rgba(120, 0, 0, 0.35);
+  z-index: 2;
+}
+
+.release-box h2 {
+  margin: 0 0 18px 0;
+  font-size: 28px;
+  color: #e6e6e6;
+}
+
+.release-box .release-date {
+  font-size: 22px;
+  font-weight: 600;
+  color: #c40000;
+  margin: 0 0 14px 0;
+}
+
+.release-box .release-text {
+  font-size: 16px;
+  color: #b5b5b5;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+
 
 
 
