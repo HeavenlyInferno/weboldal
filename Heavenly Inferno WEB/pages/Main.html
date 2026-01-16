@@ -4,77 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Heavenly Inferno</title>
-    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/main.css"/>
   </head>
   <body>
-  <nav class="hi-navbar">
-  <div class="hi-nav-inner">
-    <a class="hi-brand" href="Main.html">
-      <span class="hi-brand-top">Heavenly</span><span class="hi-brand-bot">Inferno</span>
-    </a>
+    <! MENÜSÁV BESZÚRÁSA ID ALAPJÁN >
+    <div id="menubar"></div>
 
-    <button class="hi-burger" aria-label="Menü" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="container">
+      <div class="info-box">
+        <h2>Várható szerver megjelenés</h2>
+        <p class="release-date">2026. Június</p>
+        <p class="release-text"></p>
+      </div>
+      <div class="fraction-buttons">
+        <a href="angyalok.html" class="button angyalok">Angyalok</a>
+        <a href="halandok.html" class="button halandok">Halandók</a>
+        <a href="demonok.html" class="button demonok">Démonok</a>
+      </div>
+    </div>
 
-    <ul class="hi-links">
-      <li><a href="Main.html">Főoldal</a></li>
-
-      <li class="hi-drop">
-        <button class="hi-drop-btn">Frakciók</button>
-        <div class="hi-drop-menu">
-          <a class="angel" href="angyalok.html">Angyalok</a>
-          <a class="mortal" href="halandok.html">Halandók</a>
-          <a class="demon" href="demonok.html">Démonok</a>
-        </div>
-      </li>
-
-      <li><a href="hirek.html">Hírek</a></li>
-      <li><a href="rolunk.html">Rólunk</a></li>
-      <li><a href="csatlakozas.html">Csatlakozás</a></li>
-      <li><a class="hi-discord" href="https://discord.gg/uNXEEj5Tbf" target="_blank" rel="noopener">Discord</a></li>
-    </ul>
-  </div>
-</nav>
-    
-	
-	
-	<div class="container">
-
-  <div class="release-box">
-    <h2>Várható szerver megjelenés</h2>
-    <p class="release-date">2026. Június</p>
-    <p class="release-text">
-
-    </p>
-  </div>
-
-  <a href="angyalok.html" class="button angyalok">Angyalok</a>
-  <a href="halandok.html" class="button halandok">Halandók</a>
-  <a href="demonok.html" class="button demonok">Démonok</a>
-
-</div>
-	
-	
-	
-	<script>
-  
-  const burger = document.querySelector('.hi-burger');
-  const links  = document.querySelector('.hi-links');
-  burger?.addEventListener('click', ()=>{
-    const open = links.classList.toggle('show');
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-
-  
-  const bar = document.querySelector('.hi-navbar');
-  let lastY = 0;
-  window.addEventListener('scroll', ()=>{
-    const y = window.scrollY || 0;
-    if (!bar) return;
-    if (y > 30 && y > lastY) bar.classList.add('shrink'); else if (y < 10) bar.classList.remove('shrink');
-    lastY = y;
-  });
-</script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/menubar.js"></script>
   </body>
 </html>
