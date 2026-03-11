@@ -1,21 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@400;600&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
-body {
-  font-family: "Poppins", sans-serif;
-  background: #080808;
-  color: #fff;
-  overflow-x: hidden;
-  position: relative;
-}
-
-
 :root {
   --hi-bg: rgba(12, 12, 18, 0.55);
   --hi-stroke: rgba(255, 255, 255, 0.08);
@@ -30,32 +14,31 @@ body {
   --demon2: #b30000;
 }
 
-** nav bár body {
-  padding-top: 84px;
-}
+
 
 .hi-navbar {
   position: fixed;
   inset: 0 0 auto 0;
-  height: 72px;
+  height: 7vh;
+  width: 100%;
   z-index: 9998;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.06),
     rgba(255, 255, 255, 0.02)
   );
-  backdrop-filter: var(--hi-blur);
   -webkit-backdrop-filter: var(--hi-blur);
+  backdrop-filter: var(--hi-blur);
   border-bottom: 1px solid var(--hi-stroke);
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.35);
 }
+
 .hi-nav-inner {
-  max-width: 1200px;
+  display: flex;
+  align-content: space-around;
   margin: 0 auto;
   height: 100%;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0 18px;
 }
 
@@ -85,8 +68,10 @@ body {
 .hi-links {
   list-style: none;
   display: flex;
-  gap: 14px;
   align-items: center;
+  gap: 12px;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
 }
 .hi-links > li > a,
 .hi-drop-btn {
@@ -97,6 +82,9 @@ body {
   border-radius: 12px;
   position: relative;
   transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  font-size: 1rem;
 }
 
 .hi-links > li > a::after,
