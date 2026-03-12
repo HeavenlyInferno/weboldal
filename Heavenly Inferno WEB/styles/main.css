@@ -1,34 +1,65 @@
 /* VÁLTOZÓK, MENTÉSEK, IMORTÁLÁS */
-:root{
-  
+:root {
+  --deep-space-blue: #012a4aff;
+  --yale-blue: #013a63ff;
+  --yale-blue-2: #01497cff;
+  --yale-blue-3: #014f86ff;
+  --rich-cerulean: #2a6f97ff;
+  --cerulean: #2c7da0ff;
+  --air-force-blue: #468fafff;
+  --steel-blue: #61a5c2ff;
+  --sky-blue-light: #89c2d9ff;
+  --light-blue: #a9d6e5ff;
+
+  --ink-black: #03071eff;
+  --night-bordeaux: #370617ff;
+  --black-cherry: #6a040fff;
+  --oxblood: #9d0208ff;
+  --brick-ember: #d00000ff;
+  --red-ochre: #dc2f02ff;
+  --cayenne-red: #e85d04ff;
+  --deep-saffron: #f48c06ff;
+  --orange: #faa307ff;
+  --amber-flame: #ffba08ff;
+
+  --vanilla-custard: #d0db97ff;
+  --emerald: #69b578ff;
+  --fern: #3a7d44ff;
+  --dark-spruce: #254d32ff;
+  --shadow-grey: #181d27ff;
+
+  --tea-green: #c9f2c7ff;
+  --light-green: #aceca1ff;
+  --muted-olive: #96be8cff;
+  --sage-green: #629460ff;
+  --evergreen: #243119ff;
 }
 
+html {
+  margin: 0%;
+  height: 100vh;
+}
 
-body{
+body {
   margin-top: 10%;
-  background-image: url("../img/HeavenlyInferno.jpg");
+  background-image:
+    linear-gradient(1deg, rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0) 100%),
+    url("../img/HeavenlyInferno.jpg");
   background-size: cover;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-top: 20%;
-  z-index: 1;
   position: relative;
-}
-
-body::after{
-  background: linear-gradient(to top, black, white);
-  z-index: 2;
-  position: absolute;
 }
 
 /* KONTÉNEREK BEÁLLÍTÁSA, ELHELYEZÉSE */
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   gap: 20vh;
 }
 
-.info-box{
+.info-box {
   background-color: rgb(0, 0, 0, 0.8);
   align-self: center;
   width: 50%;
@@ -39,25 +70,62 @@ body::after{
   font-weight: bold;
 }
 
-.fraction-buttons{
+.fraction-buttons {
   align-self: center;
   font-size: 1em;
   display: flex;
-  gap: 20vw
-
+  gap: 20vw;
 }
 
-.button{
+.button {
   text-decoration: none;
   color: white;
   font-weight: bold;
   background-color: black;
-  padding: 1.5vw 3vW 1.5vw 3vw;
+  padding: 1.5vw 3vw 1.5vw 3vw;
   border-radius: 50px;
+
+  transition: 0.2s;
+}
+.button:hover {
+  scale: 1.2;
 }
 
 /* ELEMEK BEÁLLÍTÁSA */
- 
-.release-date{
+
+.release-date {
   color: rgb(255, 29, 29);
+}
+
+.angyalok {
+  background: linear-gradient(
+    to top,
+    rgba(1, 58, 99, 1) 0%,
+    rgba(137, 194, 217, 1) 100%
+  );
+  -webkit-box-shadow: 0px 0px 60px 23px #a9d6e5ff;
+  -moz-box-shadow: 0px 0px 60px 23px #a9d6e5ff;
+  box-shadow: 0px 0px 60px 23px #a9d6e5ff;
+}
+
+.halandok {
+  background: linear-gradient(
+    to top,
+    rgba(37, 77, 50, 1) 0%,
+    rgba(172, 236, 161, 1) 100%
+  );
+  -webkit-box-shadow: 0px 0px 60px 23px #c9f2c7ff;
+  -moz-box-shadow: 0px 0px 60px 23px #c9f2c7ff;
+  box-shadow: 0px 0px 60px 23px #c9f2c7ff;
+}
+
+.demonok {
+  background: linear-gradient(
+    1deg,
+    rgba(87, 0, 0, 1) 0%,
+    rgba(227, 79, 34, 1) 100%
+  );
+  -webkit-box-shadow: 0px 0px 105px 45px rgba(161, 13, 13, 0.88);
+  -moz-box-shadow: 0px 0px 105px 45px rgba(161, 13, 13, 0.88);
+  box-shadow: 0px 0px 105px 45px rgba(161, 13, 13, 0.88);
 }

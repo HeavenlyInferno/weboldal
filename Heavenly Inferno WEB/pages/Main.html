@@ -5,10 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Heavenly Inferno</title>
     <link rel="stylesheet" href="../styles/main.css"/>
+    <link rel="stylesheet" href="../styles/menubar.css">
   </head>
   <body>
-    <! MENÜSÁV BESZÚRÁSA ID ALAPJÁN >
-    <div id="menubar"></div>
+    <nav class="hi-navbar">
+      <div class="hi-nav-inner">
+        <a class="hi-brand" href="Main.html">
+          <span class="hi-brand-top">Heavenly</span
+          ><span class="hi-brand-bot">Inferno</span>
+        </a>
+
+        <button class="hi-burger" aria-label="Menü" aria-expanded="false">
+        </button>
+
+        <ul class="hi-links">
+          <li><a href="Main.html">Főoldal</a></li>
+
+          <li class="hi-drop">
+            <button class="hi-drop-btn">Frakciók</button>
+            <div class="hi-drop-menu">
+              <a class="angel" href="angyalok.html">Angyalok</a>
+              <a class="mortal" href="halandok.html">Halandók</a>
+              <a class="demon" href="demonok.html">Démonok</a>
+            </div>
+          </li>
+
+          <li><a href="hirek.html">Hírek</a></li>
+          <li><a href="rolunk.html">Rólunk</a></li>
+          <li><a href="csatlakozas.html">Csatlakozás</a></li>
+          <li>
+            <a
+              class="hi-discord"
+              href="https://discord.gg/uNXEEj5Tbf"
+              target="_blank"
+              rel="noopener"
+              >Discord</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+
 
     <div class="container">
       <div class="info-box">
