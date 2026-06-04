@@ -38,44 +38,51 @@
 html {
   margin: 0%;
   height: 100vh;
+  background-color: black;
 }
 
 body {
-  margin-top: 10%;
-  background-image:
-    linear-gradient(1deg, rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0) 100%),
-    url("../img/HeavenlyInferno.jpg");
-  background-size: cover;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-top: 20%;
   position: relative;
+  margin: 0%;
+  height: 100%;
+}
+
+.background {
+  background-image:
+    linear-gradient(to top, rgb(0, 0, 0), rgba(255, 255, 255, 0)),
+    url("../img/HeavenlyInferno.png");
+    background-position: top;
+    background-size: cover;
+    height: 100%;
 }
 
 /* KONTÉNEREK BEÁLLÍTÁSA, ELHELYEZÉSE */
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  gap: 150px;
+  padding-top: 15%;
 }
 
 .info-box {
-  background-color: rgb(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.562);
   align-self: center;
   width: 50%;
+  padding: 20px;
   border-radius: 20px;
   text-align: center;
   color: white;
   font-size: 1.3em;
   font-weight: bold;
+  margin: auto;
 }
 
 .fraction-buttons {
-  align-self: center;
   font-size: 1em;
   display: flex;
-  gap: 20vw;
+  justify-content: space-around;
+  gap: 10vw;
+  width: 100%;
+  margin-top: 25vh;
 }
 
 .button {
@@ -83,8 +90,9 @@ body {
   color: white;
   font-weight: bold;
   background-color: black;
-  padding: 1.5vw 3vw 1.5vw 3vw;
-  border-radius: 50px;
+  padding: 20px 50px;
+  border-radius: 25px;
+  height: 2vh;
 
   transition: 0.2s;
 }
@@ -100,39 +108,48 @@ body {
 
 .angyalok {
   background: linear-gradient(
-    to top,
-    rgba(1, 58, 99, 1) 0%,
-    rgba(137, 194, 217, 1) 100%
+    to right,
+    rgb(1, 35, 99) 0%,
+    rgb(62, 189, 240) 100%
   );
-  -webkit-box-shadow: 0px 0px 60px 23px #a9d6e5ff;
-  -moz-box-shadow: 0px 0px 60px 23px #a9d6e5ff;
-  box-shadow: 0px 0px 60px 23px #a9d6e5ff;
+  border: 1.5px solid rgb(144, 255, 212);
+  box-shadow: 0px 0px 40px 20px rgba(113, 250, 255, 0.699);
 }
 
 .halandok {
   background: linear-gradient(
-    to top,
-    rgba(37, 77, 50, 1) 0%,
-    rgba(172, 236, 161, 1) 100%
+    to right,
+    rgb(12, 88, 35) 0%,
+    rgb(132, 243, 112) 100%
   );
-  -webkit-box-shadow: 0px 0px 60px 23px #c9f2c7ff;
-  -moz-box-shadow: 0px 0px 60px 23px #c9f2c7ff;
-  box-shadow: 0px 0px 60px 23px #c9f2c7ff;
+  border: 1.5px solid rgb(195, 255, 138);
+  box-shadow: 0px 0px 40px 20px rgb(145, 255, 139, 0.699);
 }
 
 .demonok {
   background: linear-gradient(
-    1deg,
-    rgba(87, 0, 0, 1) 0%,
-    rgba(227, 79, 34, 1) 100%
+    to right,
+    rgb(107, 0, 0) 0%,
+    rgb(255, 102, 42) 100%
   );
-  -webkit-box-shadow: 0px 0px 105px 45px rgba(161, 13, 13, 0.88);
-  -moz-box-shadow: 0px 0px 105px 45px rgba(161, 13, 13, 0.88);
-  box-shadow: 0px 0px 105px 45px rgba(161, 13, 13, 0.88);
+  border: 1.5px solid rgb(255, 173, 65);
+  box-shadow: 0px 0px 40px 20px rgba(194, 16, 3, 0.699);
 }
 
-@media screen and (max-width : 600px) {
-  .fraction-buttons{
+@media screen and (max-width: 600px) {
+  .fraction-buttons {
     flex-direction: column;
+    text-align: center;
+    gap:100px;
+    margin:auto;
+    margin-top: 10vh;
+    width: 80%;
+  }
+  .info-box {
+    width: 80%;
+    font-size: 1em;
+  }
+  .container {
+    padding-top: 20%;
   }
 }
