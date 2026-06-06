@@ -136,6 +136,62 @@ body {
   box-shadow: 0px 0px 40px 20px rgba(194, 16, 3, 0.699);
 }
 
+@media screen and (max-width: 800px) {
+  .info-box {
+    height: 15vh;
+    font-size: 0.6rem;
+  }
+  .container {
+    padding-top: 10%;
+  }
+  .fraction-buttons {
+    scale: 0.8;
+    height: 10vh;
+    text-align: center;
+    line-height: 1.5vh;
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .info-box {
+    background-color: rgba(0, 0, 0, 0.562);
+    color: white;
+  }
+  .angyalok {
+    background: linear-gradient(
+      to right,
+      rgb(1, 35, 99) 0%,
+      rgb(62, 189, 240) 100%
+    );
+    border: 1.5px solid rgb(144, 255, 212);
+    box-shadow: 0px 0px 40px 20px rgba(113, 250, 255, 0.699);
+  }
+  
+  .halandok {
+    background: linear-gradient(
+      to right,
+      rgb(12, 88, 35) 0%,
+      rgb(132, 243, 112) 100%
+    );
+    border: 1.5px solid rgb(195, 255, 138);
+    box-shadow: 0px 0px 40px 20px rgb(145, 255, 139, 0.699);
+  }
+  .demonok {
+    background: linear-gradient(
+      to right,
+      rgb(107, 0, 0) 0%,
+      rgb(255, 102, 42) 100%
+    );
+    border: 1.5px solid rgb(255, 173, 65);
+    box-shadow: 0px 0px 40px 20px rgba(194, 16, 3, 0.699);
+  }
+  .release-date {
+    color: rgb(255, 29, 29);
+  }
+}
+
+
 @media screen and (max-width: 600px) {
   .fraction-buttons {
     flex-direction: column;
@@ -153,3 +209,4 @@ body {
     padding-top: 20%;
   }
 }
+
