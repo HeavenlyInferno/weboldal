@@ -1,83 +1,147 @@
 @import url(global.css);
-@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Boldonse&family=Cal+Sans&family=Metamorphous&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Boldonse&family=Cal+Sans&family=Metamorphous&display=swap");
 
 /* VÁLTOZÓK */
-:root{
-    --ash-black: rgb(19, 20, 20);
-    --night-bordeaux: #370617ff;
-    --black-cherry: #6a040fff;
-    --oxblood: #9d0208ff;
-    --brick-ember: #d00000ff;
-    --red-ochre: #dc2f02ff;
-    --cayenne-red: #e85d04ff;
-    --deep-saffron: #f48c06ff;
-    --orange: #faa307ff;
-    --amber-flame: #ffba08ff;
+:root {
+  --ash-black: rgb(19, 20, 20);
+  --night-bordeaux: #370617ff;
+  --black-cherry: #6a040fff;
+  --oxblood: #9d0208ff;
+  --brick-ember: #d00000ff;
+  --red-ochre: #dc2f02ff;
+  --cayenne-red: #e85d04ff;
+  --deep-saffron: #f48c06ff;
+  --orange: #faa307ff;
+  --amber-flame: #ffba08ff;
 
-    --title-font: 'Metamorphous';
+  --title-font: "Metamorphous";
 }
 
 /* BODY */
 
-body{
-    color: white;
-    background-color: black;
+body {
+  color: white;
+  background-color: black;
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(0, 0, 0)),
+    url(../img/pokol-background.png);
+  padding: 10%;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
-header{
-    margin: 0%;
-    padding: 0%;
-    width: 100%;
-    font-size: 2rem;
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 0.5rem 0.5rem 1rem var(--ink-black), 0.3rem 0.7rem 0.7rem black;
-    position: relative;
-    font-family: var(--title-font), serif;
+header {
+  margin: 0%;
+  padding: 0%;
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow:
+    0.5rem 0.5rem 1rem var(--ink-black),
+    0.3rem 0.7rem 0.7rem black;
+  position: relative;
+  font-family: var(--title-font), serif;
+  text-shadow: rgba(255, 255, 255, 0.9) 0px 0px 30px;
 }
 
-h1{
-    color:  white;
-    font-family: var(--title-font), serif;
+h1 {
+  color: white;
+  font-family: var(--title-font), serif;
 }
 
-.background{
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), black), url(../img/hell-bg.png);
-    padding: 10%;
-    background-position: 5%;
-    background-size: cover;
-    position: static;
-    outline: none;
+.lore {
+  background-color: rgb(2, 2, 7);
+  width: 70vw;
+  height: 30vh;
+  margin: auto;
+  font-family: sans-serif;
+  line-height: 1.5rem;
+  text-align: center;
+  text-shadow: 0.1rem 0.1rem 0.5rem rgb(78, 3, 20);
+  outline: none;
+  border: solid 1.5px;
+  border-color: rgb(121, 12, 39);
+  box-shadow: 0 0 20px rgb(78, 3, 20);
+  border-radius: 20px;
+  padding: 3%;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+}
+p {
+  line-height: 2rem;
 }
 
-.lore{
-    background-color: var(--ash-black);
-    width: 50%;
-    margin-left: 25%;
-    font-family: sans-serif;
-    line-height: 1.5rem;
-    text-align: center;
-    margin-top: 20px;
-    outline: none;
-    border:solid;
-    border-color: red;
-    box-shadow: 0 0 20px var(--brick-ember);
-    border-radius: 20px;
-    padding: 3%;
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20vh;
+  width: 100%;
 }
 
 /* TELEFONOS NÉZET */
 
-@media screen and (max-width:600px) {
-    h1{
-        font-size: 1em;
-        margin-top: 10%;
-    }
-    .content{
-        margin: 10% 5% 10% 5%;
-    }
-    .lore{
-        width: 80%;
-        margin: auto;
-    }
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 1.3rem;
+    margin-top: 5%;
+    margin-bottom: 0%;
+  }
+  .lore {
+    width: 80%;
+    margin: auto;
+    font-size: 0.9rem;
+    min-height: fit-content;
+  }
+  p {
+    line-height: 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1em;
+  }
+  .content {
+    gap: 10vh;
+    margin-top: 15%;
+  }
+  .lore {
+    width: 80vw;
+    margin: auto;
+    min-height: fit-content;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: white;
+    background-color: black;
+
+    background-image:
+      linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(0, 0, 0)),
+      url(../img/pokol-background.png);
+  }
+  header {
+    text-shadow:
+      0.5rem 0.5rem 1rem var(--ink-black),
+      0.3rem 0.7rem 0.7rem black;
+
+    text-shadow: rgba(255, 255, 255, 0.9) 0px 0px 30px;
+  }
+  h1 {
+    color: white;
+  }
+  .lore {
+    background-color: rgb(2, 2, 7);
+
+    text-shadow: 0.1rem 0.1rem 0.5rem rgb(78, 3, 20);
+
+    border-color: rgb(121, 12, 39);
+
+    box-shadow: 0 0 20px rgb(78, 3, 20);
+  }
 }
