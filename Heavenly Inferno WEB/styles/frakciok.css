@@ -1,0 +1,101 @@
+@import url(global.css);
+@import url("https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Boldonse&family=Cal+Sans&family=Metamorphous&display=swap");
+
+/* VÁLTOZÓK */
+:root {
+  --ash-black: rgb(19, 20, 20);
+  --night-bordeaux: #370617ff;
+  --black-cherry: #6a040fff;
+  --oxblood: #9d0208ff;
+  --brick-ember: #d00000ff;
+  --red-ochre: #dc2f02ff;
+  --cayenne-red: #e85d04ff;
+  --deep-saffron: #f48c06ff;
+  --orange: #faa307ff;
+  --amber-flame: #ffba08ff;
+
+  --title-font: "Metamorphous";
+}
+
+body {
+  padding: 10%;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+header {
+  margin: 0%;
+  padding: 0%;
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  font-family: var(--title-font), serif;
+}
+
+h1 {
+  font-family: var(--title-font), serif;
+}
+
+.lore {
+  width: 70vw;
+  height: 30vh;
+  margin: auto;
+  font-family: sans-serif;
+  text-align: center;
+  outline: none;
+  border: solid 1.5px;
+  border-radius: 20px;
+  padding: 3%;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+}
+p {
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20vh;
+  width: 100%;
+}
+
+/* TELEFONOS NÉZET */
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 1.3rem;
+    margin-top: 5%;
+    margin-bottom: 0%;
+  }
+  .lore {
+    width: 80%;
+    margin: auto;
+    font-size: 0.9rem;
+    min-height: fit-content;
+  }
+  p {
+    line-height: 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1em;
+  }
+  .content {
+    gap: 10vh;
+    margin-top: 15%;
+  }
+  .lore {
+    width: 80vw;
+    margin: auto;
+    min-height: fit-content;
+  }
+}
