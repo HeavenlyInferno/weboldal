@@ -1,49 +1,9 @@
 [
   {
-    "kategori": "angyalok",
-    "cim": "teszt",
-    "datum": "2025-12-16",
-    "szoveg": "teszt",
-    "friss": true
-  },
-  {
-    "kategori": "demonok",
-    "cim": "teszt",
-    "datum": "2025-12-16",
-    "szoveg": "teszt",
-    "friss": true
-  },
-  {
-    "kategori": "halandok",
-    "cim": "teszt",
-    "datum": "2025-12-16",
-    "szoveg": "teszt",
-    "friss": true
-  },
-  {
     "kategori": "szerver",
-    "cim": "teszt",
-    "datum": "2025-12-16",
-    "szoveg": "teszt",
+    "cim": "Early Access",
+    "datum": "2026-06-28",
+    "szoveg": "Nagy örömmel jelentjük be, hogy a Heavenly Inferno Early Access hivatalosan is megnyílt a támogatóink számára.\n\nAz Early Access időszak célja, hogy a támogatók elsőként próbálhassák ki a szervert, miközben segítenek a hibák felderítésében, a játékmenet finomhangolásában és az új funkciók tesztelésében. A visszajelzéseitek közvetlenül hozzájárulnak ahhoz, hogy a nyilvános megnyitóra egy stabil és élvezetes szerverrel készülhessünk.\n\nHa már támogatónk vagy, csatlakozhatsz a szerverre és elkezdheted a kalandodat. Ha még nem vagy támogató, továbbra is lehetőséged van csatlakozni, és részt venni az Early Access időszakban.\n\nKöszönjük mindenkinek a bizalmat és a támogatást. Találkozunk a szerveren!",
     "friss": true
-  },
-  {
-    "kategori": "esemeny",
-    "cim": "teszt",
-    "datum": "2025-12-16",
-    "szoveg": "teszt",
-    "friss": true
-  },
-  {
-    "kategori": "szerver",
-    "cim": "teszt",
-    "datum": "2025-12-17",
-    "szoveg": "teszt"
-  },
-  {
-    "kategori": "szerver",
-    "cim": "teszt",
-    "datum": "2025-12-17",
-    "szoveg": "teszt"
   }
 ]

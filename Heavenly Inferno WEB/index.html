@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heavenly Inferno</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/menubar.css" />
+	<link rel="icon" type="image/png" href="img/favicon.png">
+  </head>
+  <body>
+    <nav class="hi-navbar">
+      <div class="hi-nav-inner">
+        <a class="hi-brand" href="index.html">
+          <span class="hi-brand-top">Heavenly</span
+          ><span class="hi-brand-bot">Inferno</span>
+        </a>
+
+        <button class="hi-burger" aria-label="Menü" aria-expanded="false">
+          ☰
+        </button>
+
+        <ul class="hi-links">
+          <li><a href="index.html">Főoldal</a></li>
+
+          <li class="hi-drop">
+            <a class="hi-drop-btn">Frakciók</a>
+            <div class="hi-drop-menu">
+              <a class="angel" href="pages/angyalok.html">Angyalok</a>
+              <a class="mortal" href="pages/halandok.html">Halandók</a>
+              <a class="demon" href="pages/demonok.html">Démonok</a>
+            </div>
+          </li>
+
+          <li><a href="pages/hirek.html">Hírek</a></li>
+          <li><a href="pages/rolunk.html">Rólunk</a></li>
+          <li><a href="pages/csatlakozas.html">Csatlakozás</a></li>
+          <li>
+            <a
+              class="hi-discord"
+              href="https://discord.gg/uNXEEj5Tbf"
+              target="_blank"
+              rel="noopener"
+              >Discord</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="background">
+      <div class="container">
+        <div class="info-box">
+          <h2>Várható szerver megjelenés</h2>
+          <p class="release-date">HAMAROSAN</p>
+          <p class="release-text"></p>
+        </div>
+        <div class="fraction-buttons">
+          <a href="pages/angyalok.html" class="button angyalok">Angyalok</a>
+          <a href="pages/halandok.html" class="button halandok">Halandók</a>
+          <a href="pages/demonok.html" class="button demonok">Démonok</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
