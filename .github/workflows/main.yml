@@ -1,0 +1,30 @@
+name: "Deployment via FTP"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  
+  ftp-deploy:
+    runs-on: ubuntu-slim
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Upload via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.SERVER_ADDRESS }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          local-dir: ./Heavenly Inferno WEB/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.idea*
+          dry-run: true
+
